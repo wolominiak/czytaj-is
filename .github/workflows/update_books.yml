@@ -1,55 +1,58 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>czytaj.is | Biblioteka Islandzka</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-50 text-slate-900">
+name: Aktualizacja Bazy Islandzkiej
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
 
-    <header class="bg-[#1e3a8a] text-white py-12 text-center shadow-lg">
-        <h1 class="text-5xl font-black tracking-tight">CZYTAJ.IS</h1>
-        <p class="mt-2 text-blue-100 italic text-lg">Kompletna polska biblioteka autorów z Islandii</p>
-    </header>
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    <main id="book-grid" class="container mx-auto px-4 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-        <div id="loading" class="col-span-full text-center py-10 text-gray-500">Ładowanie bazy danych...</div>
-    </main>
+      - name: Filtrowanie danych
+        run: |
+          curl -L "https://get.feedink.com/e6ed5dacbfe60a3ea12e24759d7d5647" > empik.xml
+          python3 -c "
+          import xml.etree.ElementTree as ET
+          import json
 
-    <script>
-        // PODSTAW KONFIGURACJE:
-        const DATA_URL = "https://raw.githubusercontent.com/wolominiak/czytaj-is/main/islandia.json";
-        const BUYBOX_ID = "21554"; 
+          def get_text(node, tags):
+              for tag in tags:
+                  found = node.find(tag)
+                  if found is not None and found.text:
+                      return found.text
+              return ''
 
-        async function loadBooks() {
-            try {
-                const res = await fetch(DATA_URL);
-                if (!res.ok) throw new Error("Brak pliku bazy");
-                const books = await res.json();
-                const grid = document.getElementById('book-grid');
-                document.getElementById('loading').remove();
+          try:
+              tree = ET.parse('empik.xml')
+              root = tree.getroot()
+              books = []
+              items = root.findall('.//item') or root.findall('.//product')
+              islandic_keywords = ['son', 'dóttir', 'sson', 'laxness', 'indriðason', 'jónasson', 'stefánsson']
 
-                books.forEach(book => {
-                    if(!book.ean) return; // Pomiń jeśli nie ma EAN
-                    grid.innerHTML += `
-                        <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-xl transition-all flex flex-col h-full border border-gray-100">
-                            <div class="h-52 mb-4 overflow-hidden rounded">
-                                <img src="${book.image}" alt="${book.title}" class="w-full h-full object-contain">
-                            </div>
-                            <h2 class="text-xs font-bold text-gray-800 line-clamp-2 mb-1">${book.title}</h2>
-                            <p class="text-[10px] text-blue-600 font-medium mb-4 uppercase">${book.author}</p>
-                            <a href="https://buybox.pl/basic/add.html?id=${BUYBOX_ID}&ean=${book.ean}" 
-                               target="_blank" 
-                               class="mt-auto block w-full bg-slate-800 hover:bg-blue-700 text-white text-[10px] font-bold py-2 text-center rounded transition">
-                               SPRAWDŹ CENY
-                            </a>
-                        </div>`;
-                });
-            } catch (err) {
-                document.getElementById('loading').innerText = "Robot jeszcze nie wygenerował bazy. Poczekaj kilka minut lub uruchom go w Actions.";
-            }
-        }
-        loadBooks();
-    </script>
-</body>
-</html>
+              for item in items:
+                  author = get_text(item, ['author', 'creator', 'producer'])
+                  if any(key in author.lower() for key in islandic_keywords):
+                      books.append({
+                          'title': get_text(item, ['title', 'name']),
+                          'author': author,
+                          'ean': get_text(item, ['ean', 'isbn', 'barcode']),
+                          'image': get_text(item, ['image', 'img_url', 'enclosure'])
+                      })
+              
+              with open('islandia.json', 'w', encoding='utf-8') as f:
+                  json.dump(books, f, ensure_ascii=False, indent=2)
+              print(f'Sukces! Znaleziono {len(books)} ksiazek.')
+          except Exception as e:
+              print(f'Blad: {e}')
+          "
+
+      - name: Commit i Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add islandia.json
+          git commit -m "Aktualizacja bazy: $(date)" || exit 0
+          git push
