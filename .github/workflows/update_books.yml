@@ -26,27 +26,42 @@ jobs:
               return ''
 
           try:
+              # Parsowanie XML - obsługa dużych plików
               tree = ET.parse('empik.xml')
               root = tree.getroot()
               books = []
+              
+              # Empik często używa struktury <channel><item> lub po prostu <product>
               items = root.findall('.//item') or root.findall('.//product')
-              islandic_keywords = ['son', 'dóttir', 'sson', 'laxness', 'indriðason', 'jónasson', 'stefánsson']
+              
+              # Szersza lista słów kluczowych
+              keywords = ['son', 'dóttir', 'sson', 'laxness', 'islandia', 'islandzki', 'islandzka']
 
               for item in items:
-                  author = get_text(item, ['author', 'creator', 'producer'])
-                  if any(key in author.lower() for key in islandic_keywords):
+                  title = get_text(item, ['title', 'name'])
+                  author = get_text(item, ['author', 'creator', 'producer', 'brand'])
+                  description = get_text(item, ['description', 'desc'])
+                  
+                  search_content = (author + ' ' + title + ' ' + description).lower()
+                  
+                  if any(key in search_content for key in keywords):
                       books.append({
-                          'title': get_text(item, ['title', 'name']),
-                          'author': author,
+                          'title': title,
+                          'author': author if author else 'Autor Islandzki',
                           'ean': get_text(item, ['ean', 'isbn', 'barcode']),
                           'image': get_text(item, ['image', 'img_url', 'enclosure'])
                       })
               
+              # Usuwanie duplikatów po EAN
+              unique_books = {b['ean']: b for b in books if b['ean']}.values()
+              
               with open('islandia.json', 'w', encoding='utf-8') as f:
-                  json.dump(books, f, ensure_ascii=False, indent=2)
-              print(f'Sukces! Znaleziono {len(books)} ksiazek.')
+                  json.dump(list(unique_books), f, ensure_ascii=False, indent=2)
+              
+              print(f'Sukces! Znaleziono {len(unique_books)} ksiazek.')
           except Exception as e:
               print(f'Blad: {e}')
+              exit(1)
           "
 
       - name: Commit i Push
