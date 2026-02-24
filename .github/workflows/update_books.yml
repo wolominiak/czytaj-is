@@ -25,44 +25,50 @@ jobs:
               root = tree.getroot()
               books = []
               
-              # Główne klucze (szukamy tych fraz w polu autora)
-              islandic_keys = ['son', 'dóttir', 'sson', 'laxness', 'jónasson', 'indriðason', 'stefánsson', 'sjón', 'ólafsdóttir', 'baldursdóttir', 'sigurðardóttir']
-              
-              # Lista wykluczeń (autorzy nie-islandzcy, którzy psują wyniki)
-              black_list = ['sanderson', 'clarkson', 'patterson', 'robinson', 'grisham', 'king', 'steele', 'dickinson', 'morrison', 'wilson', 'nelson', 'harrison', 'janson', 'simpson', 'abrahamson', 'johansson', 'larsson', 'jackson', 'thompson', 'hanson', 'nicholson', 'mason', 'jason']
+              # TWOJA BIAŁA LISTA AUTORÓW
+              white_list = [
+                  'Halldór Laxness', 'Gunnar Gunnarsson', 'Einar Kárason', 
+                  'Hallgrímur Helgason', 'Yrsa Sigurðardóttir', 'Sjón', 
+                  'Arnaldur Indriðason', 'Linda Vilhjálmsdóttir', 'Bragi Ólafsson', 
+                  'Sigríður Hagalín Björnsdóttir', 'Andri Snær Magnason', 
+                  'Steinar Bragi', 'Elísabet Jökulsdóttir', 'Jón Kalman Stefánsson', 
+                  'Eva Björg Ægisdóttir', 'Áslaug Jónsdóttir'
+              ]
+
+              # Konwersja na małe litery dla lepszego dopasowania
+              white_list_lower = [name.lower() for name in white_list]
 
               for offer in root.findall('.//o'):
-                  # 1. Pobieramy autora z atrybutów <a>
-                  author = ''
+                  # 1. Zbieramy tekst ze wszystkich tagów <a> oraz tytułu
+                  # Czasami autor jest w innym miejscu, więc sprawdzamy wszystko
+                  attrs_text = ''
+                  author_found = ''
+                  
                   for a in offer.findall('.//a'):
+                      val = (a.text or '').strip()
+                      attrs_text += ' ' + val
                       if a.get('name', '').lower() in ['autor', 'producent', 'author']:
-                          author = (a.text or '').strip()
+                          author_found = val
+
+                  title = (offer.get('name') or '').strip()
+                  full_text_to_check = (title + ' ' + attrs_text).lower()
+                  
+                  # 2. Sprawdzamy, czy którykolwiek autor z listy występuje w danych produktu
+                  match = None
+                  for i, designer in enumerate(white_list_lower):
+                      if designer in full_text_to_check:
+                          match = white_list[i] # Zachowujemy oryginalną pisownię nazwiska
                           break
-                  
-                  # Jeśli nie ma autora, nie sprawdzamy dalej
-                  if not author:
-                      continue
 
-                  author_lower = author.lower()
-                  
-                  # 2. Sprawdzamy, czy autor pasuje do islandzkich kluczy
-                  is_islandic = any(key in author_lower for key in islandic_keys)
-                  
-                  # 3. Sprawdzamy, czy nie jest na czarnej liście
-                  is_blocked = any(blocked in author_lower for blocked in black_list)
-
-                  if is_islandic and not is_blocked:
-                      title = (offer.get('name') or '').strip()
+                  if match:
                       ean = offer.get('id') or ''
-                      
-                      # Pobieranie obrazka
                       img_tag = offer.find('.//main')
                       image = img_tag.get('url') if img_tag is not None else ''
 
                       if title and ean:
                           books.append({
                               'title': title,
-                              'author': author,
+                              'author': match if not author_found else author_found,
                               'ean': ean,
                               'image': image
                           })
@@ -70,13 +76,13 @@ jobs:
               # Usuwanie duplikatów po EAN
               unique = list({b['ean']: b for b in books}.values())
               
-              # Sortowanie po autorze (opcjonalnie, dla ładu na stronie)
-              unique.sort(key=lambda x: x['author'])
+              # Sortowanie po tytule
+              unique.sort(key=lambda x: x['title'])
 
               with open('islandia.json', 'w', encoding='utf-8') as f:
                   json.dump(unique, f, ensure_ascii=False, indent=2)
               
-              print(f'SUKCES: Znaleziono {len(unique)} pozycji.')
+              print(f'SUKCES: Znaleziono {len(unique)} pozycji wybranych autorów.')
           except Exception as e:
               print(f'BLAD: {str(e)}')
           "
@@ -86,5 +92,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add islandia.json
-          git commit -m "Aktualizacja bazy islandzkiej" || echo "Brak zmian"
+          git commit -m "Aktualizacja bazy wg listy autorów" || echo "Brak zmian"
           git push
