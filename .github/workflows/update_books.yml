@@ -21,47 +21,47 @@ jobs:
           import json
 
           try:
-              # Parsowanie pliku XML (format Ceneo: <offers><o>...</o></offers>)
               tree = ET.parse('empik.xml')
               root = tree.getroot()
               books = []
               
-              # Słowa kluczowe (nazwiska islandzkie)
-              keywords = ['son', 'dóttir', 'sson', 'laxness', 'indriðason', 'jónasson', 'stefánsson', 'islandia']
+              # LISTA ISLANDZKA (końcówki i konkretne nazwiska)
+              islandic_keys = ['son', 'dóttir', 'sson', 'laxness', 'jónasson', 'indriðason', 'stefánsson', 'sjón', 'magnússon']
+              
+              # CZARNA LISTA (autorzy, których NIE CHCEMY, mimo końcówki son/sson)
+              black_list = ['janson', 'clarkson', 'sanderson', 'patterson', 'robinson', 'abrahamson']
 
               for offer in root.findall('.//o'):
-                  # Tytuł jest w atrybucie 'name' lub w tagu <name>
                   title = offer.get('name') or ''
                   if not title:
                       name_tag = offer.find('name')
                       title = name_tag.text if name_tag is not None else ''
 
-                  # Szukamy autora w atrybutach <a name='Producent'> lub <a name='Autor'>
+                  # Szukamy autora
                   author = ''
                   attrs = offer.findall('.//a')
                   for a in attrs:
-                      attr_name = a.get('name', '').lower()
-                      if attr_name in ['autor', 'producent', 'wykonawca']:
+                      if a.get('name', '').lower() in ['autor', 'producent']:
                           author = a.text if a.text else ''
                           break
-
-                  # Jeśli nie znaleźliśmy autora, bierzemy opis do sprawdzenia
-                  desc_tag = offer.find('desc')
-                  description = desc_tag.text if desc_tag is not None else ''
                   
-                  # Pełny tekst do przeszukania
-                  search_stack = f'{title} {author} {description}'.lower()
+                  author_lower = author.lower()
+                  
+                  # FILTR: Czy autor brzmi islandzko?
+                  is_islandic = any(key in author_lower for key in islandic_keys)
+                  
+                  # FILTR: Czy autor jest na czarnej liście?
+                  is_blocked = any(blocked in author_lower for blocked in black_list)
 
-                  if any(key in search_stack for key in keywords):
-                      # EAN/ID i Zdjęcie
+                  if is_islandic and not is_blocked:
                       ean = offer.get('id') or ''
-                      img_tag = offer.find('.//main') # W tym formacie główne zdjęcie jest często w <main>
+                      img_tag = offer.find('.//main')
                       image = img_tag.get('url') if img_tag is not None else ''
 
-                      if title and (author or 'island' in search_stack):
+                      if title and author:
                           books.append({
                               'title': title,
-                              'author': author if author else 'Autor Islandzki',
+                              'author': author,
                               'ean': ean,
                               'image': image
                           })
@@ -72,7 +72,7 @@ jobs:
               with open('islandia.json', 'w', encoding='utf-8') as f:
                   json.dump(unique, f, ensure_ascii=False, indent=2)
               
-              print(f'SUKCES: Znaleziono {len(unique)} islandzkich pozycji.')
+              print(f'SUKCES: Po filtracji zostało {len(unique)} islandzkich pozycji.')
           except Exception as e:
               print(f'BLAD: {str(e)}')
           "
@@ -82,5 +82,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add islandia.json
-          git commit -m "Aktualizacja bazy" || echo "Brak zmian"
+          git commit -m "Automatyczne czyszczenie bazy" || echo "Brak zmian"
           git push
