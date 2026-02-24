@@ -19,42 +19,52 @@ jobs:
           python3 -c "
           import xml.etree.ElementTree as ET
           import json
+          import re
 
           try:
               tree = ET.parse('empik.xml')
               root = tree.getroot()
               books = []
               
-              # Klucze islandzkie (końcówki i nazwiska)
-              islandic_keys = ['son', 'dóttir', 'sson', 'laxness', 'jónasson', 'indriðason', 'stefánsson', 'sjón', 'magnússon', 'sigurðardóttir']
+              # Bardziej precyzyjne końcówki (sprawdzane na końcach słów)
+              islandic_suffixes = r'.*(son|dóttir|sson|sdóttir)$'
               
-              # Czarna lista (wykluczamy nie-Islandczyków z końcówką -son)
-              black_list = ['janson', 'clarkson', 'sanderson', 'patterson', 'robinson', 'grisham', 'king', 'steele', 'dickinson', 'morrison', 'wilson', 'nelson', 'harrison']
+              # Konkretne nazwiska wybitnych autorów (nie pasujące do wzorca)
+              specific_authors = ['laxness', 'sjón', 'kristín marja baldursdóttir', 'audur ava ólafsdóttir']
+              
+              # Czarna lista autorów (nie-Islandczycy z końcówką son)
+              black_list = ['sanderson', 'clarkson', 'patterson', 'robinson', 'grisham', 'king', 'steele', 'dickinson', 'morrison', 'wilson', 'nelson', 'harrison', 'janson', 'simpson', 'abrahamson', 'johansson', 'larsson']
 
               for offer in root.findall('.//o'):
-                  title = (offer.get('name') or '').strip()
-                  if not title:
-                      name_tag = offer.find('name')
-                      title = name_tag.text if name_tag is not None else ''
-
-                  # Zbieramy dane z atrybutów <a>
-                  author = 'Autor Islandzki'
-                  all_attrs_text = ''
+                  # Szukamy autora w atrybutach
+                  author = ''
                   for a in offer.findall('.//a'):
-                      attr_val = a.text if a.text else ''
-                      all_attrs_text += ' ' + attr_val
-                      # Próba precyzyjnego złapania autora
                       if a.get('name', '').lower() in ['autor', 'producent', 'author']:
-                          author = attr_val
-
-                  # Szukamy w tytule i wszystkich atrybutach
-                  search_stack = (title + ' ' + all_attrs_text).lower()
+                          author = (a.text or '').strip()
+                          break
                   
-                  # Logika: musi mieć islandzki klucz i NIE może być na czarnej liście
-                  is_islandic = any(key in search_stack for key in islandic_keys)
-                  is_blocked = any(blocked in search_stack for blocked in black_list)
+                  if not author or author == 'Autor Islandzki':
+                      continue
 
-                  if is_islandic and not is_blocked:
+                  author_lower = author.lower()
+                  
+                  # Sprawdzamy, czy autor jest Islandczykiem
+                  is_islandic = False
+                  
+                  # 1. Czy pasuje do wzorca końcówki (np. Arnaldur Indriðason)
+                  if re.match(islandic_suffixes, author_lower):
+                      is_islandic = True
+                  
+                  # 2. Czy jest na liście konkretnych nazwisk
+                  if any(name in author_lower for name in specific_authors):
+                      is_islandic = True
+
+                  # 3. WYKLUCZENIE: Czy jest na czarnej liście?
+                  if any(blocked in author_lower for blocked in black_list):
+                      is_islandic = False
+
+                  if is_islandic:
+                      title = (offer.get('name') or '').strip()
                       ean = offer.get('id') or ''
                       img_tag = offer.find('.//main')
                       image = img_tag.get('url') if img_tag is not None else ''
@@ -67,13 +77,13 @@ jobs:
                               'image': image
                           })
 
-              # Usuwanie duplikatów po EAN
+              # Usuwanie duplikatów
               unique = list({b['ean']: b for b in books}.values())
               
               with open('islandia.json', 'w', encoding='utf-8') as f:
                   json.dump(unique, f, ensure_ascii=False, indent=2)
               
-              print(f'SUKCES: Znaleziono {len(unique)} pozycji.')
+              print(f'SUKCES: Znaleziono {len(unique)} islandzkich pozycji.')
           except Exception as e:
               print(f'BLAD: {str(e)}')
           "
@@ -83,5 +93,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add islandia.json
-          git commit -m "Automatyczna aktualizacja bazy" || echo "Brak zmian"
+          git commit -m "Precyzyjna filtracja bazy" || echo "Brak zmian"
           git push
