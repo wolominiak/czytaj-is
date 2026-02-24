@@ -25,40 +25,41 @@ jobs:
               root = tree.getroot()
               books = []
               
-              # LISTA ISLANDZKA (końcówki i konkretne nazwiska)
-              islandic_keys = ['son', 'dóttir', 'sson', 'laxness', 'jónasson', 'indriðason', 'stefánsson', 'sjón', 'magnússon']
+              # Klucze islandzkie (końcówki i nazwiska)
+              islandic_keys = ['son', 'dóttir', 'sson', 'laxness', 'jónasson', 'indriðason', 'stefánsson', 'sjón', 'magnússon', 'sigurðardóttir']
               
-              # CZARNA LISTA (autorzy, których NIE CHCEMY, mimo końcówki son/sson)
-              black_list = ['janson', 'clarkson', 'sanderson', 'patterson', 'robinson', 'abrahamson']
+              # Czarna lista (wykluczamy nie-Islandczyków z końcówką -son)
+              black_list = ['janson', 'clarkson', 'sanderson', 'patterson', 'robinson', 'grisham', 'king', 'steele', 'dickinson', 'morrison', 'wilson', 'nelson', 'harrison']
 
               for offer in root.findall('.//o'):
-                  title = offer.get('name') or ''
+                  title = (offer.get('name') or '').strip()
                   if not title:
                       name_tag = offer.find('name')
                       title = name_tag.text if name_tag is not None else ''
 
-                  # Szukamy autora
-                  author = ''
-                  attrs = offer.findall('.//a')
-                  for a in attrs:
-                      if a.get('name', '').lower() in ['autor', 'producent']:
-                          author = a.text if a.text else ''
-                          break
+                  # Zbieramy dane z atrybutów <a>
+                  author = 'Autor Islandzki'
+                  all_attrs_text = ''
+                  for a in offer.findall('.//a'):
+                      attr_val = a.text if a.text else ''
+                      all_attrs_text += ' ' + attr_val
+                      # Próba precyzyjnego złapania autora
+                      if a.get('name', '').lower() in ['autor', 'producent', 'author']:
+                          author = attr_val
+
+                  # Szukamy w tytule i wszystkich atrybutach
+                  search_stack = (title + ' ' + all_attrs_text).lower()
                   
-                  author_lower = author.lower()
-                  
-                  # FILTR: Czy autor brzmi islandzko?
-                  is_islandic = any(key in author_lower for key in islandic_keys)
-                  
-                  # FILTR: Czy autor jest na czarnej liście?
-                  is_blocked = any(blocked in author_lower for blocked in black_list)
+                  # Logika: musi mieć islandzki klucz i NIE może być na czarnej liście
+                  is_islandic = any(key in search_stack for key in islandic_keys)
+                  is_blocked = any(blocked in search_stack for blocked in black_list)
 
                   if is_islandic and not is_blocked:
                       ean = offer.get('id') or ''
                       img_tag = offer.find('.//main')
                       image = img_tag.get('url') if img_tag is not None else ''
 
-                      if title and author:
+                      if title and ean:
                           books.append({
                               'title': title,
                               'author': author,
@@ -66,13 +67,13 @@ jobs:
                               'image': image
                           })
 
-              # Usuwanie duplikatów
+              # Usuwanie duplikatów po EAN
               unique = list({b['ean']: b for b in books}.values())
               
               with open('islandia.json', 'w', encoding='utf-8') as f:
                   json.dump(unique, f, ensure_ascii=False, indent=2)
               
-              print(f'SUKCES: Po filtracji zostało {len(unique)} islandzkich pozycji.')
+              print(f'SUKCES: Znaleziono {len(unique)} pozycji.')
           except Exception as e:
               print(f'BLAD: {str(e)}')
           "
@@ -82,5 +83,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add islandia.json
-          git commit -m "Automatyczne czyszczenie bazy" || echo "Brak zmian"
+          git commit -m "Automatyczna aktualizacja bazy" || echo "Brak zmian"
           git push
