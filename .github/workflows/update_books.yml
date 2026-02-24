@@ -15,81 +15,68 @@ jobs:
 
       - name: Filtrowanie danych
         run: |
+          # Pobieramy plik (używamy -L dla przekierowań i -s dla ciszy)
           curl -L "https://get.feedink.com/e6ed5dacbfe60a3ea12e24759d7d5647" > empik.xml
+          
           python3 -c "
-          import xml.etree.ElementTree as ET
+          import re
           import json
 
-          def simplify_text(text):
-              # Zamienia islandzkie i polskie znaki na podstawowe łacińskie
-              chars = {'ð':'d','þ':'th','á':'a','é':'e','í':'i','ó':'o','ú':'u','ý':'y','æ':'ae','ö':'o','ć':'c','ł':'l','ń':'n','ó':'o','ś':'s','ź':'z','ż':'z','ą':'a','ę':'e'}
+          def simplify(text):
+              chars = {'ð':'d','þ':'th','á':'a','é':'e','í':'i','ó':'o','ú':'u','ý':'y','æ':'ae','ö':'o'}
               text = text.lower()
               for k, v in chars.items():
                   text = text.replace(k, v)
               return text
 
+          white_list = [
+              'Halldór Laxness', 'Gunnar Gunnarsson', 'Einar Kárason', 
+              'Hallgrímur Helgason', 'Yrsa Sigurðardóttir', 'Sjón', 
+              'Arnaldur Indriðason', 'Linda Vilhjálmsdóttir', 'Bragi Ólafsson', 
+              'Sigríður Hagalín Björnsdóttir', 'Andri Snær Magnason', 
+              'Steinar Bragi', 'Elísabet Jökulsdóttir', 'Jón Kalman Stefánsson', 
+              'Eva Björg Ægisdóttir', 'Áslaug Jónsdóttir'
+          ]
+
           try:
-              tree = ET.parse('empik.xml')
-              root = tree.getroot()
+              with open('empik.xml', 'r', encoding='utf-8', errors='ignore') as f:
+                  content = f.read()
+
+              # Dzielimy plik na sekcje produktów (szukamy tagów <o ... </o>)
+              offers = re.findall(r'<o.*?</o>', content, re.DOTALL)
+              print(f'Przeanalizowano {len(offers)} surowych ofert w pliku.')
+
               books = []
-              
-              white_list = [
-                  'Halldór Laxness', 'Gunnar Gunnarsson', 'Einar Kárason', 
-                  'Hallgrímur Helgason', 'Yrsa Sigurðardóttir', 'Sjón', 
-                  'Arnaldur Indriðason', 'Linda Vilhjálmsdóttir', 'Bragi Ólafsson', 
-                  'Sigríður Hagalín Björnsdóttir', 'Andri Snær Magnason', 
-                  'Steinar Bragi', 'Elísabet Jökulsdóttir', 'Jón Kalman Stefánsson', 
-                  'Eva Björg Ægisdóttir', 'Áslaug Jónsdóttir'
-              ]
-
-              # Przygotowujemy uproszczoną listę do porównań
-              simplified_white_list = [simplify_text(name) for name in white_list]
-
-              for offer in root.findall('.//o'):
-                  # Zbieramy dane z produktu
-                  title = (offer.get('name') or '').strip()
-                  attrs_text = ''
-                  author_found = 'Autor Islandzki'
+              for offer in offers:
+                  offer_simple = simplify(offer)
                   
-                  for a in offer.findall('.//a'):
-                      val = (a.text or '').strip()
-                      attrs_text += ' ' + val
-                      if a.get('name', '').lower() in ['autor', 'producent', 'author']:
-                          author_found = val
+                  for author_name in white_list:
+                      if simplify(author_name) in offer_simple:
+                          # Wyciągamy dane prostym szukaniem tekstu
+                          title_match = re.search(r'name=\"(.*?)\"', offer) or re.search(r'<name>(.*?)</name>', offer)
+                          id_match = re.search(r'id=\"(.*?)\"', offer)
+                          img_match = re.search(r'url=\"(.*?)\"', offer) # Szuka pierwszego URL (zazwyczaj zdjęcie)
 
-                  # Tekst do przeszukania w wersji uproszczonej
-                  search_content_raw = (title + ' ' + attrs_text).lower()
-                  search_content_simple = simplify_text(search_content_raw)
-                  
-                  match = None
-                  for i, simple_name in enumerate(simplified_white_list):
-                      # Szukamy uproszczonego nazwiska w uproszczonym tekście
-                      if simple_name in search_content_simple:
-                          match = white_list[i]
+                          title = title_match.group(1) if title_match else 'Brak tytułu'
+                          ean = id_match.group(1) if id_match else ''
+                          image = img_match.group(1) if img_match else ''
+
+                          if ean:
+                              books.append({
+                                  'title': title,
+                                  'author': author_name,
+                                  'ean': ean,
+                                  'image': image
+                              })
                           break
 
-                  if match:
-                      ean = offer.get('id') or ''
-                      img_tag = offer.find('.//main')
-                      image = img_tag.get('url') if img_tag is not None else ''
-
-                      if title and ean:
-                          books.append({
-                              'title': title,
-                              'author': match, # Zawsze zapisujemy ładne nazwisko z listy
-                              'ean': ean,
-                              'image': image
-                          })
-
               unique = list({b['ean']: b for b in books}.values())
-              unique.sort(key=lambda x: x['title'])
-
               with open('islandia.json', 'w', encoding='utf-8') as f:
                   json.dump(unique, f, ensure_ascii=False, indent=2)
               
-              print(f'SUKCES: Znaleziono {len(unique)} pozycji.')
+              print(f'SUKCES: Wyłowiono {len(unique)} pozycji.')
           except Exception as e:
-              print(f'BLAD: {str(e)}')
+              print(f'KRYTYCZNY BLAD: {str(e)}')
           "
 
       - name: Zapisz do repozytorium
@@ -97,5 +84,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add islandia.json
-          git commit -m "Aktualizacja bazy - odporna na znaki specjalne" || echo "Brak zmian"
+          git commit -m "Aktualizacja brute-force" || echo "Brak zmian"
           git push
