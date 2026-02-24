@@ -1,16 +1,12 @@
 name: Aktualizacja Bazy Islandzkiej
 on:
-  schedule:
-    - cron: '0 3 * * *'
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
       - name: Filtrowanie danych
         run: |
           curl -L "https://get.feedink.com/e6ed5dacbfe60a3ea12e24759d7d5647" > empik.xml
@@ -18,56 +14,39 @@ jobs:
           import xml.etree.ElementTree as ET
           import json
 
-          def get_text(node, tags):
-              for tag in tags:
-                  found = node.find(tag)
-                  if found is not None and found.text:
-                      return found.text
-              return ''
-
           try:
-              # Parsowanie XML - obsługa dużych plików
               tree = ET.parse('empik.xml')
               root = tree.getroot()
               books = []
+              # Szukamy wszystkich elementów, które mogą być produktem
+              items = root.findall('.//item') or root.findall('.//product') or root.findall('.//entry')
               
-              # Empik często używa struktury <channel><item> lub po prostu <product>
-              items = root.findall('.//item') or root.findall('.//product')
-              
-              # Szersza lista słów kluczowych
-              keywords = ['son', 'dóttir', 'sson', 'laxness', 'islandia', 'islandzki', 'islandzka']
+              keywords = ['son', 'dóttir', 'sson', 'laxness', 'indriðason', 'jónasson']
 
               for item in items:
-                  title = get_text(item, ['title', 'name'])
-                  author = get_text(item, ['author', 'creator', 'producer', 'brand'])
-                  description = get_text(item, ['description', 'desc'])
+                  # Pobieramy CAŁY tekst z wnętrza produktu, ze wszystkich tagów
+                  all_text = ' '.join([t.text for t in item.iter() if t.text]).lower()
                   
-                  search_content = (author + ' ' + title + ' ' + description).lower()
-                  
-                  if any(key in search_content for key in keywords):
-                      books.append({
-                          'title': title,
-                          'author': author if author else 'Autor Islandzki',
-                          'ean': get_text(item, ['ean', 'isbn', 'barcode']),
-                          'image': get_text(item, ['image', 'img_url', 'enclosure'])
-                      })
-              
-              # Usuwanie duplikatów po EAN
-              unique_books = {b['ean']: b for b in books if b['ean']}.values()
-              
+                  if any(key in all_text for key in keywords):
+                      # Próba wyciągnięcia danych z najczęstszych tagów
+                      d = {
+                          'title': next((item.find(t).text for t in ['title', 'name'] if item.find(t) is not None), 'Brak tytułu'),
+                          'author': next((item.find(t).text for t in ['author', 'brand', 'producer', 'creator'] if item.find(t) is not None), 'Autor Islandzki'),
+                          'ean': next((item.find(t).text for t in ['ean', 'isbn', 'id', 'g:id'] if item.find(t) is not None), ''),
+                          'image': next((item.find(t).text for t in ['image', 'image_link', 'g:image_link'] if item.find(t) is not None), '')
+                      }
+                      books.append(d)
+
               with open('islandia.json', 'w', encoding='utf-8') as f:
-                  json.dump(list(unique_books), f, ensure_ascii=False, indent=2)
-              
-              print(f'Sukces! Znaleziono {len(unique_books)} ksiazek.')
+                  json.dump(books, f, ensure_ascii=False, indent=2)
+              print(f'Sukces! Znaleziono {len(books)} pozycji.')
           except Exception as e:
               print(f'Blad: {e}')
-              exit(1)
           "
-
       - name: Commit i Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add islandia.json
-          git commit -m "Aktualizacja bazy: $(date)" || exit 0
+          git commit -m "Aktualizacja" || exit 0
           git push
