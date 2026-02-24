@@ -1,34 +1,86 @@
-name: Szpieg Struktury XML
+name: Aktualizacja Bazy Islandzkiej
 on:
+  schedule:
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 jobs:
-  debug:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Pobieranie pliku i analiza
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Filtrowanie danych
         run: |
           curl -L "https://get.feedink.com/e6ed5dacbfe60a3ea12e24759d7d5647" > empik.xml
           python3 -c "
-          import re
+          import xml.etree.ElementTree as ET
+          import json
+
           try:
-              with open('empik.xml', 'r', encoding='utf-8') as f:
-                  # Czytamy początek pliku
-                  head = f.read(5000)
+              # Parsowanie pliku XML (format Ceneo: <offers><o>...</o></offers>)
+              tree = ET.parse('empik.xml')
+              root = tree.getroot()
+              books = []
+              
+              # Słowa kluczowe (nazwiska islandzkie)
+              keywords = ['son', 'dóttir', 'sson', 'laxness', 'indriðason', 'jónasson', 'stefánsson', 'islandia']
+
+              for offer in root.findall('.//o'):
+                  # Tytuł jest w atrybucie 'name' lub w tagu <name>
+                  title = offer.get('name') or ''
+                  if not title:
+                      name_tag = offer.find('name')
+                      title = name_tag.text if name_tag is not None else ''
+
+                  # Szukamy autora w atrybutach <a name='Producent'> lub <a name='Autor'>
+                  author = ''
+                  attrs = offer.findall('.//a')
+                  for a in attrs:
+                      attr_name = a.get('name', '').lower()
+                      if attr_name in ['autor', 'producent', 'wykonawca']:
+                          author = a.text if a.text else ''
+                          break
+
+                  # Jeśli nie znaleźliśmy autora, bierzemy opis do sprawdzenia
+                  desc_tag = offer.find('desc')
+                  description = desc_tag.text if desc_tag is not None else ''
                   
-                  # Znajdujemy wszystkie tagi (np. <g:brand> lub <title>)
-                  tags = re.findall(r'<([a-zA-Z0-9:_-]+)[ >]', head)
-                  unique_tags = sorted(list(set(tags)))
-                  
-                  print('\n' + '='*30)
-                  print('STRUKTURA TWOJEGO PLIKU:')
-                  print('='*30)
-                  print('Znalezione nazwy pól (tagi):')
-                  for tag in unique_tags:
-                      print(f'  - {tag}')
-                  print('='*30)
-                  print('\nFRAGMENT TEKSTU DO ANALIZY:')
-                  print(head[:1000])
+                  # Pełny tekst do przeszukania
+                  search_stack = f'{title} {author} {description}'.lower()
+
+                  if any(key in search_stack for key in keywords):
+                      # EAN/ID i Zdjęcie
+                      ean = offer.get('id') or ''
+                      img_tag = offer.find('.//main') # W tym formacie główne zdjęcie jest często w <main>
+                      image = img_tag.get('url') if img_tag is not None else ''
+
+                      if title and (author or 'island' in search_stack):
+                          books.append({
+                              'title': title,
+                              'author': author if author else 'Autor Islandzki',
+                              'ean': ean,
+                              'image': image
+                          })
+
+              # Usuwanie duplikatów
+              unique = list({b['ean']: b for b in books}.values())
+              
+              with open('islandia.json', 'w', encoding='utf-8') as f:
+                  json.dump(unique, f, ensure_ascii=False, indent=2)
+              
+              print(f'SUKCES: Znaleziono {len(unique)} islandzkich pozycji.')
           except Exception as e:
-              print(f'Błąd: {e}')
+              print(f'BLAD: {str(e)}')
           "
+
+      - name: Zapisz do repozytorium
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add islandia.json
+          git commit -m "Aktualizacja bazy" || echo "Brak zmian"
+          git push
