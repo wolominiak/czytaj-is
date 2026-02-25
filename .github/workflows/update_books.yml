@@ -1,4 +1,5 @@
 name: Aktualizacja Bazy Islandzkiej
+
 on:
   schedule:
     - cron: '0 3 * * *'
@@ -20,7 +21,6 @@ jobs:
           import re
           import json
 
-          # LISTA NAZWISK (bez imion)
           white_list_surnames = [
               'Laxness', 'Gunnarsson', 'Kárason', 'Helgason', 
               'Sigurðardóttir', 'Sigurðsson', 'Indriðason', 'Vilhjálmsdóttir', 
@@ -36,7 +36,6 @@ jobs:
               books = []
 
               for offer in offers:
-                  # Szukamy autora tylko w odpowiednich tagach atrybutów
                   author_tags = re.findall(r'<a name=\"(?:Autor|Producent|Wykonawca)\".*?>(.*?)</a>', offer, re.IGNORECASE)
                   author_content = ' '.join(author_tags).lower()
                   
@@ -45,29 +44,20 @@ jobs:
 
                   found_match = None
                   for surname in white_list_surnames:
-                      # Szukamy nazwiska jako osobnego słowa, żeby nie złapać np. 'Kowalson'
                       if surname.lower() in author_content:
                           found_match = surname
                           break
                   
                   if found_match:
-                      # Pobieramy EAN
                       id_match = re.search(r'id=\"(.*?)\"', offer)
                       res_ean = id_match.group(1) if id_match else ''
-                      
-                      # Pobieramy Tytuł (z obsługą CDATA i bez)
                       title_match = re.search(r'<name><!\[CDATA\[(.*?)\]\]></name>', offer) or re.search(r'<name>(.*?)</name>', offer)
                       res_title = title_match.group(1) if title_match else ''
-                      
-                      # Pobieramy Zdjęcie
                       img_match = re.search(r'<main url=\"(.*?)\"', offer)
                       res_img = img_match.group(1) if img_match else ''
 
-                      # Odrzucamy błędy typu tytuł 'EAN' i puste rekordy
                       if res_ean and res_title and res_title.upper() != 'EAN':
-                          # Wyciągamy pełne imię i nazwisko z XML dla wyświetlania
                           full_author_name = author_tags[0] if author_tags else found_match
-                          
                           books.append({
                               'title': res_title[:150],
                               'author': full_author_name,
@@ -75,7 +65,6 @@ jobs:
                               'image': res_img
                           })
 
-              # Usuwanie duplikatów po EAN
               unique = list({b['ean']: b for b in books}.values())
               unique.sort(key=lambda x: x['author'])
 
@@ -83,16 +72,17 @@ jobs:
                   json.dump(unique, f, ensure_ascii=False, indent=2)
               
               print(f'Przeanalizowano {len(offers)} ofert.')
-              print(f'SUKCES: Wyłowiono {len(unique)} pozycji pasujących do nazwisk.')
+              print(f'SUKCES: Wyłowiono {len(unique)} pozycji.')
           except Exception as e:
               print(f'BLAD: {str(e)}')
           "
 
-     - name: Zapisz do repozytorium
+      - name: Zapisz do repozytorium
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git pull origin main --rebase  # <--- To naprawi błąd (pobierze Twoje zmiany z www)
+          git fetch origin main
+          git pull origin main --rebase || echo "Brak zmian do pobrania"
           git add islandia.json
-          git commit -m "Aktualizacja po nazwiskach" || echo "Brak zmian"
+          git commit -m "Aktualizacja bazy islandzkiej" || echo "Brak zmian do zapisu"
           git push origin main
