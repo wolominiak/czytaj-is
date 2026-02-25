@@ -21,15 +21,13 @@ jobs:
           import re
           import json
 
-          # Funkcja usuwająca polskie i islandzkie ogonki dla pewności dopasowania
           def normalize(text):
-              chars = {'ð':'d','þ':'th','á':'a','é':'e','í':'i','ó':'o','ú':'u','ý':'y','æ':'ae','ö':'o','ł':'l','ń':'n','ó':'o','ś':'s','ź':'z','ż':'z','ą':'a','ę':'e'}
+              chars = {'ð':'d','þ':'th','á':'a','é':'e','í':'i','ó':'o','ú':'u','ý':'y','æ':'ae','ö':'o','ł':'l','ń':'n','ś':'s','ź':'z','ż':'z','ą':'a','ę':'e'}
               text = text.lower()
               for k, v in chars.items():
                   text = text.replace(k, v)
               return text
 
-          # Twoja lista nazwisk (wersja normalna do zapisu i uproszczona do szukania)
           names_to_check = [
               'Laxness', 'Gunnarsson', 'Kárason', 'Helgason', 
               'Sigurðardóttir', 'Sigurðsson', 'Indriðason', 'Vilhjálmsdóttir', 
@@ -43,12 +41,10 @@ jobs:
               with open('empik.xml', 'r', encoding='utf-8', errors='ignore') as f:
                   content = f.read()
 
-              # Wycinamy oferty
               offers = re.findall(r'<o.*?</o>', content, re.DOTALL)
               books = []
 
               for offer in offers:
-                  # Czyścimy ofertę z opisów (desc), żeby nie łapać 'rekomendacji'
                   header_part = offer.split('<desc>')[0]
                   header_simple = normalize(header_part)
                   
@@ -59,24 +55,36 @@ jobs:
                           break
                   
                   if found_name:
+                      # 1. Wyciągamy EAN
                       id_match = re.search(r'id=\"(.*?)\"', offer)
-                      # Szukamy nazwy wewnątrz <name>...</name> lub atrybutu name
-                      title_match = re.search(r'<name><!\[CDATA\[(.*?)\]\]></name>', offer) or re.search(r'<name>(.*?)</name>', offer)
-                      img_match = re.search(r'url=\"(.*?)\"', offer)
-
                       res_ean = id_match.group(1) if id_match else ''
+                      
+                      # 2. Wyciągamy Tytuł
+                      title_match = re.search(r'<name><!\[CDATA\[(.*?)\]\]></name>', offer) or re.search(r'<name>(.*?)</name>', offer)
                       res_title = title_match.group(1) if title_match else 'Książka islandzka'
-                      res_img = img_match.group(1) if img_match else ''
+
+                      # 3. Wyciągamy OKŁADKĘ (poprawiony radar)
+                      # Szukamy najpierw w tagu <main url=... potem w <image... a na końcu jakiegokolwiek jpg/png
+                      img_url = ''
+                      main_img = re.search(r'<main url=\"(.*?)\"', offer)
+                      any_img = re.search(r'<(?:image|img|photo|main).*?(?:url|src)=\"(.*?)\"', offer)
+                      fallback_img = re.search(r'\"(https?://[^\"]+?\.(?:jpg|jpeg|png))\"', offer)
+
+                      if main_img:
+                          img_url = main_img.group(1)
+                      elif any_img:
+                          img_url = any_img.group(1)
+                      elif fallback_img:
+                          img_url = fallback_img.group(1)
 
                       if res_ean and res_title.upper() != 'EAN':
                           books.append({
                               'title': res_title[:150],
                               'author': found_name,
                               'ean': res_ean,
-                              'image': res_img
+                              'image': img_url
                           })
 
-              # Unikalne po EAN
               unique = list({b['ean']: b for b in books}.values())
               unique.sort(key=lambda x: x['author'])
 
@@ -96,5 +104,5 @@ jobs:
           git fetch origin main
           git pull origin main --rebase || echo "Brak zmian"
           git add islandia.json
-          git commit -m "Aktualizacja bazy - podejscie pancerne" || echo "Brak zmian"
+          git commit -m "Naprawa okladek - radar v2" || echo "Brak zmian"
           git push origin main
