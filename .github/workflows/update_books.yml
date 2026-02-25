@@ -88,10 +88,11 @@ jobs:
               print(f'BLAD: {str(e)}')
           "
 
-      - name: Zapisz do repozytorium
+     - name: Zapisz do repozytorium
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull origin main --rebase  # <--- To naprawi błąd (pobierze Twoje zmiany z www)
           git add islandia.json
           git commit -m "Aktualizacja po nazwiskach" || echo "Brak zmian"
-          git push
+          git push origin main
