@@ -528,12 +528,6 @@
     "image": "https://ecsmedia.pl/c/das-letzte-ritual-b-iext119760434.jpg"
   },
   {
-    "title": "Das gefrorene Licht",
-    "author": "Sigurðardóttir",
-    "ean": "p1123867808",
-    "image": "https://ecsmedia.pl/c/das-gefrorene-licht-b-iext119758429.jpg"
-  },
-  {
     "title": "Dna",
     "author": "Sigurðardóttir",
     "ean": "p1142677215",
@@ -874,5 +868,11 @@
     "author": "Ólafsson",
     "ean": "p1588155047",
     "image": "https://ecsmedia.pl/c/welfare-and-the-great-recession-drm-b-iext177906597.jpg"
+  },
+  {
+    "title": "Touch",
+    "author": "Ólafsson",
+    "ean": "p1713953649",
+    "image": "https://ecsmedia.pl/c/touch-b-iext218405201.jpg"
   }
 ]
