@@ -18,12 +18,6 @@
     "image": "https://ecsmedia.pl/c/islandia-tajemnicza-kraina-arktycznych-cudow-b-iext183991464.jpg"
   },
   {
-    "title": "Ysaye: Sonatas For Solo Violin",
-    "author": "Bragi",
-    "ean": "p1108676753",
-    "image": "https://ecsmedia.pl/c/ysaye-sonatas-for-solo-violin-b-iext155823563.jpg"
-  },
-  {
     "title": "Solar Plexus - ebook epub",
     "author": "Bragi",
     "ean": "p1338229990",
@@ -654,6 +648,12 @@
     "image": "https://ecsmedia.pl/c/diabelska-lalka-freyja-i-huldar-tom-5-b-iext194580705.jpg"
   },
   {
+    "title": "The Doll",
+    "author": "Sigurðardóttir",
+    "ean": "p1324723666",
+    "image": "https://ecsmedia.pl/c/the-doll-b-iext116259408.jpg"
+  },
+  {
     "title": "Konsekwencje. Freyja i Huldar. Tom 6",
     "author": "Sigurðardóttir",
     "ean": "p1379334453",
@@ -705,7 +705,7 @@
     "title": "Diabelska lalka",
     "author": "Sigurðardóttir",
     "ean": "p1709553831",
-    "image": "https://ecsmedia.pl/c/diabelska-lalka-b-iext214558205.jpg"
+    "image": "https://ecsmedia.pl/c/diabelska-lalka-b-iext218959812.jpg"
   },
   {
     "title": "Złe decyzje",
@@ -759,7 +759,7 @@
     "title": "Ciche kroki na schodach",
     "author": "Ægisdóttir",
     "ean": "p1292811495",
-    "image": "https://ecsmedia.pl/c/ciche-kroki-na-schodach-b-iext194526107.jpg"
+    "image": "https://ecsmedia.pl/c/ciche-kroki-na-schodach-b-iext218805828.jpg"
   },
   {
     "title": "Ciche kroki na schodach - ebook epub",
@@ -826,6 +826,12 @@
     "author": "Ólafsson",
     "ean": "p1279886773",
     "image": "https://ecsmedia.pl/c/mozart-contemporaries-plyta-winylowa-b-iext155852802.jpg"
+  },
+  {
+    "title": "Skeylja, płyta winylowa",
+    "author": "Ólafsson",
+    "ean": "p1284561869",
+    "image": "https://ecsmedia.pl/c/skeylja-b-iext92956147.jpg"
   },
   {
     "title": "From Afar",
