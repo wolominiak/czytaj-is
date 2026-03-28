@@ -498,6 +498,18 @@
     "image": "https://ecsmedia.pl/c/zuchwaliada-b-iext215026957.jpg"
   },
   {
+    "title": "Zuchwaliada - ebook EPUB",
+    "author": "Laxness",
+    "ean": "p1715263683",
+    "image": "https://ecsmedia.pl/c/zuchwaliada-ebook-epub-b-iext219005009.jpg"
+  },
+  {
+    "title": "Zuchwaliada - ebook MOBI",
+    "author": "Laxness",
+    "ean": "p1715268138",
+    "image": "https://ecsmedia.pl/c/zuchwaliada-ebook-mobi-b-iext219005007.jpg"
+  },
+  {
     "title": "Die Geschichte vom blauen Planeten",
     "author": "Magnason",
     "ean": "2344103",
@@ -520,6 +532,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1123867792",
     "image": "https://ecsmedia.pl/c/das-letzte-ritual-b-iext119760434.jpg"
+  },
+  {
+    "title": "Das gefrorene Licht",
+    "author": "Sigurðardóttir",
+    "ean": "p1123867808",
+    "image": "https://ecsmedia.pl/c/das-gefrorene-licht-b-iext119758429.jpg"
   },
   {
     "title": "Dna",
@@ -628,6 +646,18 @@
     "author": "Sigurðardóttir",
     "ean": "p1268506747",
     "image": "https://ecsmedia.pl/c/kobiety-z-klasa-b-iext197818168.jpg"
+  },
+  {
+    "title": "Wzgórze wisielców - ebook mobi",
+    "author": "Sigurðardóttir",
+    "ean": "p1269287955",
+    "image": "https://ecsmedia.pl/c/wzgorze-wisielcow-ebook-mobi-b-iext218997608.jpg"
+  },
+  {
+    "title": "Wzgórze wisielców - ebook epub",
+    "author": "Sigurðardóttir",
+    "ean": "p1269288592",
+    "image": "https://ecsmedia.pl/c/wzgorze-wisielcow-ebook-epub-b-iext218997485.jpg"
   },
   {
     "title": "Undesired - audiobook",
@@ -876,9 +906,9 @@
     "image": "https://ecsmedia.pl/c/welfare-and-the-great-recession-drm-b-iext177906597.jpg"
   },
   {
-    "title": "Touch",
+    "title": "Touch - audiobook",
     "author": "Ólafsson",
     "ean": "p1713953649",
-    "image": "https://ecsmedia.pl/c/touch-b-iext218405201.jpg"
+    "image": "https://ecsmedia.pl/c/touch-audiobook-b-iext219083860.jpg"
   }
 ]
