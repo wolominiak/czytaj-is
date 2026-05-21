@@ -6,6 +6,12 @@
     "image": "https://ecsmedia.pl/c/blackout-island-b-iext142582798.jpg"
   },
   {
+    "title": "Wyspa",
+    "author": "Björnsdóttir",
+    "ean": "p1179986438",
+    "image": "https://ecsmedia.pl/c/wyspa-b-iext159028042.jpg"
+  },
+  {
     "title": "Święte słowo",
     "author": "Björnsdóttir",
     "ean": "p1236362799",
@@ -162,6 +168,12 @@
     "image": "https://ecsmedia.pl/c/poradnik-domowy-kilera-b-iext158171608.jpg"
   },
   {
+    "title": "Grobowa cisza. Erlendur Sveinsson. Tom 2",
+    "author": "Indriðason",
+    "ean": "p1045557988",
+    "image": "https://ecsmedia.pl/c/grobowa-cisza-erlendur-sveinsson-tom-2-b-iext189011026.jpg"
+  },
+  {
     "title": "Grobowa cisza. Komisarz Erlendur Sveinsson. Tom 4 - ebook mobi",
     "author": "Indriðason",
     "ean": "p1046134997",
@@ -214,6 +226,12 @@
     "author": "Indriðason",
     "ean": "p1126359470",
     "image": "https://ecsmedia.pl/c/w-bagnie-erlendur-sveinsson-tom-1-b-iext189309303.jpg"
+  },
+  {
+    "title": "Grobowa cisza. Erlendur Sveinsson. Tom 2",
+    "author": "Indriðason",
+    "ean": "p1126359498",
+    "image": "https://ecsmedia.pl/c/grobowa-cisza-erlendur-sveinsson-tom-2-b-iext197099329.jpg"
   },
   {
     "title": "Hipotermia. Komisarz Erlendur Sveinsson. Tom 8 - ebook epub",
@@ -456,6 +474,12 @@
     "image": "https://ecsmedia.pl/c/grobowa-cisza-erlendur-sveinsson-tom-2-b-iext188163983.jpg"
   },
   {
+    "title": "W bagnie. Erlendur Sveinsson. Tom 1",
+    "author": "Indriðason",
+    "ean": "prod61041137",
+    "image": "https://ecsmedia.pl/c/w-bagnie-erlendur-sveinsson-tom-1-b-iext66746432.jpg"
+  },
+  {
     "title": "Vom Flügelschlag des Sterntauchers",
     "author": "Jökulsdóttir",
     "ean": "p1217492062",
@@ -634,6 +658,24 @@
     "author": "Sigurðardóttir",
     "ean": "p1044929443",
     "image": "https://ecsmedia.pl/c/thora-tom-2-wez-moja-dusze-b-iext159020406.jpg"
+  },
+  {
+    "title": "Pamiętam cię",
+    "author": "Sigurðardóttir",
+    "ean": "p1050176273",
+    "image": "https://ecsmedia.pl/c/pamietam-cie-b-iext167035902.jpg"
+  },
+  {
+    "title": "Statek śmierci. Thora. Tom 6",
+    "author": "Sigurðardóttir",
+    "ean": "p1075525445",
+    "image": "https://ecsmedia.pl/c/statek-smierci-thora-tom-6-b-iext167042398.jpg"
+  },
+  {
+    "title": "Niechciani",
+    "author": "Sigurðardóttir",
+    "ean": "p1099436402",
+    "image": "https://ecsmedia.pl/c/niechciani-b-iext159021858.jpg"
   },
   {
     "title": "Das letzte Ritual",
@@ -912,22 +954,10 @@
     "image": "https://ecsmedia.pl/c/draumalandio-b-iext79840474.jpg"
   },
   {
-    "title": "Sommerlicht, und dann kommt die Nacht",
-    "author": "Stefánsson",
-    "ean": "p1063417815",
-    "image": "https://ecsmedia.pl/c/sommerlicht-und-dann-kommt-die-nacht-b-iext142149890.jpg"
-  },
-  {
     "title": "Smutek aniołów",
     "author": "Stefánsson",
     "ean": "p1103919538",
     "image": "https://ecsmedia.pl/c/smutek-aniolow-b-iext189038106.jpg"
-  },
-  {
-    "title": "Etwas von der Größe des Universums",
-    "author": "Stefánsson",
-    "ean": "p1132910449",
-    "image": "https://ecsmedia.pl/c/etwas-von-der-groesse-des-universums-b-iext142536710.jpg"
   },
   {
     "title": "Czarna msza",
