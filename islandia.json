@@ -72,10 +72,28 @@
     "image": "https://ecsmedia.pl/c/shostakovich-violin-concertos-1-2-plyta-winylowa-b-iext214915252.jpg"
   },
   {
+    "title": "Beethoven: String Quartets, Op. 59 Nos. 1 & 2",
+    "author": "Bragi",
+    "ean": "p1712041530",
+    "image": "https://ecsmedia.pl/c/beethoven-string-quartets-op-59-nos-1-2-b-iext218091673.jpg"
+  },
+  {
+    "title": "Beethoven: Violin Sonatas Op. 12 & Op. 24",
+    "author": "Bragi",
+    "ean": "p1722537595",
+    "image": "https://ecsmedia.pl/c/beethoven-violin-sonatas-op-12-op-24-b-iext221915446.jpg"
+  },
+  {
     "title": "Dzieła",
     "author": "Bragi",
     "ean": "prod3790035",
     "image": "https://ecsmedia.pl/c/dziela-b-iext97398946.jpg"
+  },
+  {
+    "title": "Weinberg: Orchestral Works. Volume 4",
+    "author": "Gunnarsson",
+    "ean": "p1049606352",
+    "image": "https://ecsmedia.pl/c/weinberg-orchestral-works-volume-4-b-iext120311245.jpg"
   },
   {
     "title": "Languages of Science in the Eighteenth Century [DRM] - ebook PDF",
@@ -94,6 +112,12 @@
     "author": "Gunnarsson",
     "ean": "p1745889761",
     "image": "https://ecsmedia.pl/c/pro-microsoft-power-bi-administration-drm-b-iext226390284.jpg"
+  },
+  {
+    "title": "Weinberg Concertos",
+    "author": "Gunnarsson",
+    "ean": "prod1210845",
+    "image": "https://ecsmedia.pl/c/weinberg-concertos-b-iext190311614.jpg"
   },
   {
     "title": "Advent im Hochgebirge",
@@ -648,12 +672,6 @@
     "image": "https://ecsmedia.pl/c/das-letzte-ritual-b-iext119760434.jpg"
   },
   {
-    "title": "Das gefrorene Licht",
-    "author": "Sigurðardóttir",
-    "ean": "p1123867808",
-    "image": "https://ecsmedia.pl/c/das-gefrorene-licht-b-iext119758429.jpg"
-  },
-  {
     "title": "Dna",
     "author": "Sigurðardóttir",
     "ean": "p1142677215",
@@ -942,40 +960,10 @@
     "image": "https://ecsmedia.pl/c/ciche-kroki-na-schodach-ebook-mobi-b-iext110160636.jpg"
   },
   {
-    "title": "Olafsson: Glass Piano Works",
-    "author": "Ólafsson",
-    "ean": "p1134698550",
-    "image": "https://ecsmedia.pl/c/olafsson-glass-piano-works-b-iext198459298.jpg"
-  },
-  {
     "title": "Denen Zum Trost, Die Sich In Ihrer Gegenwart Nicht Finden Können",
     "author": "Ólafsson",
     "ean": "p1159627421",
     "image": "https://ecsmedia.pl/c/denen-zum-trost-die-sich-in-ihrer-gegenwart-nicht-finden-koennen-b-iext160801053.jpg"
-  },
-  {
-    "title": "Darkest Hour (Original Motion Picture Soundtrack)",
-    "author": "Ólafsson",
-    "ean": "p1179629737",
-    "image": "https://ecsmedia.pl/c/darkest-hour-original-motion-picture-soundtrack-b-iext199991957.jpg"
-  },
-  {
-    "title": "Johann Sebastian Bach",
-    "author": "Ólafsson",
-    "ean": "p1212180056",
-    "image": "https://ecsmedia.pl/c/johann-sebastian-bach-b-iext199139068.jpg"
-  },
-  {
-    "title": "Debussy / Rameau",
-    "author": "Ólafsson",
-    "ean": "p1240521520",
-    "image": "https://ecsmedia.pl/c/debussy-rameau-b-iext196235716.jpg"
-  },
-  {
-    "title": "Reflections",
-    "author": "Ólafsson",
-    "ean": "p1264859182",
-    "image": "https://ecsmedia.pl/c/reflections-b-iext197664286.jpg"
   },
   {
     "title": "Reflections, płyta winylowa",
@@ -1012,12 +1000,6 @@
     "author": "Ólafsson",
     "ean": "p1336053676",
     "image": "https://ecsmedia.pl/c/from-afar-plyta-winylowa-b-iext200760458.jpg"
-  },
-  {
-    "title": "Goldberg Variations, płyta winylowa",
-    "author": "Ólafsson",
-    "ean": "p1412133070",
-    "image": "https://ecsmedia.pl/c/goldberg-variations-plyta-winylowa-b-iext166636627.jpg"
   },
   {
     "title": "Goldberg Variations",
