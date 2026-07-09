@@ -156,12 +156,6 @@
     "image": "https://ecsmedia.pl/c/weinberg-concertos-b-iext190311614.jpg"
   },
   {
-    "title": "Advent im Hochgebirge",
-    "author": "Gunnarsson",
-    "ean": "prod60080343",
-    "image": "https://ecsmedia.pl/c/advent-im-hochgebirge-b-iext119408554.jpg"
-  },
-  {
     "title": "101 Reykjavik",
     "author": "Helgason",
     "ean": "4075",
@@ -232,12 +226,6 @@
     "author": "Indriðason",
     "ean": "p1080551480",
     "image": "https://ecsmedia.pl/c/zimny-wiatr-komisarz-erlendur-sveinsson-tom-7-ebook-mobi-b-iext207803151.jpg"
-  },
-  {
-    "title": "Duell",
-    "author": "Indriðason",
-    "ean": "p1103308088",
-    "image": "https://ecsmedia.pl/c/duell-b-iext142548494.jpg"
   },
   {
     "title": "Hipotermia. Erlendur Sveinsson. Tom 6",
@@ -714,12 +702,6 @@
     "image": "https://ecsmedia.pl/c/the-legacy-b-iext121400123.jpg"
   },
   {
-    "title": "Sog",
-    "author": "Sigurðardóttir",
-    "ean": "p1201804035",
-    "image": "https://ecsmedia.pl/c/sog-b-iext190588849.jpg"
-  },
-  {
     "title": "Pułapka",
     "author": "Sigurðardóttir",
     "ean": "p1207186834",
@@ -748,6 +730,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1222257861",
     "image": "https://ecsmedia.pl/c/siec-reykjavik-noir-tom-2-b-iext180554575.jpg"
+  },
+  {
+    "title": "Porachunki. Freyja i Huldar. Tom 2",
+    "author": "Sigurðardóttir",
+    "ean": "p1224630943",
+    "image": "https://ecsmedia.pl/c/porachunki-freyja-i-huldar-tom-2-b-iext196992941.jpg"
   },
   {
     "title": "Porachunki - ebook mobi",
@@ -820,12 +808,6 @@
     "author": "Sigurðardóttir",
     "ean": "p1307623174",
     "image": "https://ecsmedia.pl/c/diabelska-lalka-freyja-i-huldar-tom-5-b-iext194580705.jpg"
-  },
-  {
-    "title": "The Doll",
-    "author": "Sigurðardóttir",
-    "ean": "p1324723666",
-    "image": "https://ecsmedia.pl/c/the-doll-b-iext116259408.jpg"
   },
   {
     "title": "Konsekwencje. Freyja i Huldar. Tom 6",
