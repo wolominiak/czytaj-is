@@ -150,10 +150,10 @@
     "image": "https://ecsmedia.pl/c/pro-microsoft-power-bi-administration-drm-ebook-epub-b-iext228475439.jpg"
   },
   {
-    "title": "Weinberg Concertos",
+    "title": "Advent im Hochgebirge",
     "author": "Gunnarsson",
-    "ean": "prod1210845",
-    "image": "https://ecsmedia.pl/c/weinberg-concertos-b-iext190311614.jpg"
+    "ean": "prod60080343",
+    "image": "https://ecsmedia.pl/c/advent-im-hochgebirge-b-iext119408554.jpg"
   },
   {
     "title": "101 Reykjavik",
@@ -660,18 +660,6 @@
     "image": "https://ecsmedia.pl/c/statek-smierci-thora-tom-6-b-iext167042398.jpg"
   },
   {
-    "title": "Thora. Tom 3. W proch się obrócisz",
-    "author": "Sigurðardóttir",
-    "ean": "p1098813923",
-    "image": "https://ecsmedia.pl/c/thora-tom-3-w-proch-sie-obrocisz-b-iext167040349.jpg"
-  },
-  {
-    "title": "Thora. Tom 1. Trzeci znak",
-    "author": "Sigurðardóttir",
-    "ean": "p1098814029",
-    "image": "https://ecsmedia.pl/c/thora-tom-1-trzeci-znak-b-iext167040544.jpg"
-  },
-  {
     "title": "Das letzte Ritual",
     "author": "Sigurðardóttir",
     "ean": "p1123867792",
@@ -688,6 +676,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1142677215",
     "image": "https://ecsmedia.pl/c/dna-b-iext189661716.jpg"
+  },
+  {
+    "title": "The Legacy",
+    "author": "Sigurðardóttir",
+    "ean": "p1165719565",
+    "image": "https://ecsmedia.pl/c/the-legacy-b-iext121400123.jpg"
   },
   {
     "title": "Sog",
@@ -804,12 +798,6 @@
     "image": "https://ecsmedia.pl/c/diabelska-lalka-freyja-i-huldar-tom-5-b-iext194580705.jpg"
   },
   {
-    "title": "The Doll",
-    "author": "Sigurðardóttir",
-    "ean": "p1324723666",
-    "image": "https://ecsmedia.pl/c/the-doll-b-iext116259408.jpg"
-  },
-  {
     "title": "Konsekwencje. Freyja i Huldar. Tom 6",
     "author": "Sigurðardóttir",
     "ean": "p1379334453",
@@ -862,12 +850,6 @@
     "author": "Sigurðardóttir",
     "ean": "p1552579947",
     "image": "https://ecsmedia.pl/c/znikad-pomocy-audiobook-b-iext190017330.jpg"
-  },
-  {
-    "title": "Odziedziczone zło. Freyja i Huldar. Tom 1",
-    "author": "Sigurðardóttir",
-    "ean": "p1559023465",
-    "image": "https://ecsmedia.pl/c/odziedziczone-zlo-freyja-i-huldar-tom-1-b-iext199579101.jpg"
   },
   {
     "title": "Diabelska lalka",
