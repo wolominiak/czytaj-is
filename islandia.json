@@ -66,12 +66,6 @@
     "image": "https://ecsmedia.pl/c/kata-b-iext197782236.jpg"
   },
   {
-    "title": "Shostakovich Violin Concertos",
-    "author": "Bragi",
-    "ean": "p1241775049",
-    "image": "https://ecsmedia.pl/c/shostakovich-violin-concertos-b-iext122708188.jpg"
-  },
-  {
     "title": "Mendelssohn: Violin Sonatas",
     "author": "Bragi",
     "ean": "p1293192731",
@@ -148,6 +142,12 @@
     "author": "Gunnarsson",
     "ean": "p1745889761",
     "image": "https://ecsmedia.pl/c/pro-microsoft-power-bi-administration-drm-ebook-epub-b-iext228475439.jpg"
+  },
+  {
+    "title": "Weinberg Concertos",
+    "author": "Gunnarsson",
+    "ean": "prod1210845",
+    "image": "https://ecsmedia.pl/c/weinberg-concertos-b-iext190311614.jpg"
   },
   {
     "title": "Advent im Hochgebirge",
@@ -232,6 +232,12 @@
     "author": "Indriðason",
     "ean": "p1103308088",
     "image": "https://ecsmedia.pl/c/duell-b-iext142548494.jpg"
+  },
+  {
+    "title": "Głos. Erlendur Sveinsson. Tom 3",
+    "author": "Indriðason",
+    "ean": "p1126358860",
+    "image": "https://ecsmedia.pl/c/glos-erlendur-sveinsson-tom-3-b-iext189309282.jpg"
   },
   {
     "title": "Hipotermia. Erlendur Sveinsson. Tom 6",
@@ -708,6 +714,12 @@
     "image": "https://ecsmedia.pl/c/siec-reykjavik-noir-tom-2-b-iext180554575.jpg"
   },
   {
+    "title": "Porachunki. Freyja i Huldar. Tom 2",
+    "author": "Sigurðardóttir",
+    "ean": "p1224630943",
+    "image": "https://ecsmedia.pl/c/porachunki-freyja-i-huldar-tom-2-b-iext196992941.jpg"
+  },
+  {
     "title": "Porachunki - ebook mobi",
     "author": "Sigurðardóttir",
     "ean": "p1227935575",
@@ -960,12 +972,6 @@
     "image": "https://ecsmedia.pl/c/reflections-plyta-winylowa-b-iext197778900.jpg"
   },
   {
-    "title": "Mozart & Contemporaries",
-    "author": "Ólafsson",
-    "ean": "p1279886755",
-    "image": "https://ecsmedia.pl/c/mozart-contemporaries-b-iext157340334.jpg"
-  },
-  {
     "title": "Mozart & Contemporaries, płyta winylowa",
     "author": "Ólafsson",
     "ean": "p1279886773",
@@ -988,12 +994,6 @@
     "author": "Ólafsson",
     "ean": "p1336053676",
     "image": "https://ecsmedia.pl/c/from-afar-plyta-winylowa-b-iext200760458.jpg"
-  },
-  {
-    "title": "Goldberg Variations",
-    "author": "Ólafsson",
-    "ean": "p1412133353",
-    "image": "https://ecsmedia.pl/c/goldberg-variations-b-iext196267052.jpg"
   },
   {
     "title": "Goldberg Variations (przeźroczysty winyl), płyta winylowa",
