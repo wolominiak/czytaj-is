@@ -1,5 +1,11 @@
 [
   {
+    "title": "Blackout Island",
+    "author": "Björnsdóttir",
+    "ean": "p1170467967",
+    "image": "https://ecsmedia.pl/c/blackout-island-b-iext142582798.jpg"
+  },
+  {
     "title": "Wyspa",
     "author": "Björnsdóttir",
     "ean": "p1179986438",
@@ -16,6 +22,12 @@
     "author": "Björnsdóttir",
     "ean": "p1275334944",
     "image": "https://ecsmedia.pl/c/ognie-b-iext193969280.jpg"
+  },
+  {
+    "title": "Islandia. Tajemnicza kraina arktycznych cudów - ebook PDF",
+    "author": "Björnsdóttir",
+    "ean": "p1449426745",
+    "image": "https://ecsmedia.pl/c/islandia-tajemnicza-kraina-arktycznych-cudow-b-iext143437289.jpg"
   },
   {
     "title": "Islandia. Tajemnicza kraina arktycznych cudów - ebook EPUB",
@@ -40,6 +52,12 @@
     "author": "Bragi",
     "ean": "p1338229990",
     "image": "https://ecsmedia.pl/c/solar-plexus-b-iext119982532.jpg"
+  },
+  {
+    "title": "Smells Like Spells Norse Magic Bragi pałeczki zapachowe (inspiration/creativity) 50 g",
+    "author": "Bragi",
+    "ean": "p1613768150",
+    "image": "https://ecsmedia.pl/c/smells-like-spells-norse-magic-bragi-paleczki-zapachowe-inspiration-creativity-50-g-b-iext199727184.jpg"
   },
   {
     "title": "Bach: Violin Concertos, płyta winylowa",
@@ -120,6 +138,12 @@
     "image": "https://ecsmedia.pl/c/advent-im-hochgebirge-b-iext119408554.jpg"
   },
   {
+    "title": "101 Reykjavik",
+    "author": "Helgason",
+    "ean": "4075",
+    "image": "https://ecsmedia.pl/c/101-reykjavik-b-iext175261936.jpg"
+  },
+  {
     "title": "Seekrank in München",
     "author": "Helgason",
     "ean": "p1108566298",
@@ -198,6 +222,12 @@
     "image": "https://ecsmedia.pl/c/glos-erlendur-sveinsson-tom-3-b-iext189309282.jpg"
   },
   {
+    "title": "Hipotermia. Erlendur Sveinsson. Tom 6",
+    "author": "Indriðason",
+    "ean": "p1126359391",
+    "image": "https://ecsmedia.pl/c/hipotermia-erlendur-sveinsson-tom-6-b-iext189309333.jpg"
+  },
+  {
     "title": "Grobowa cisza. Erlendur Sveinsson. Tom 2",
     "author": "Indriðason",
     "ean": "p1126359498",
@@ -270,10 +300,28 @@
     "image": "https://ecsmedia.pl/c/der-reisende-b-iext142558115.jpg"
   },
   {
+    "title": "Reykjavik Nights - audiobook",
+    "author": "Indriðason",
+    "ean": "p1272888268",
+    "image": "https://ecsmedia.pl/c/reykjavik-nights-b-iext119713221.jpg"
+  },
+  {
     "title": "Strange Shores - audiobook",
     "author": "Indriðason",
     "ean": "p1272897761",
     "image": "https://ecsmedia.pl/c/strange-shores-b-iext119106937.jpg"
+  },
+  {
+    "title": "Black Skies - audiobook",
+    "author": "Indriðason",
+    "ean": "p1274222369",
+    "image": "https://ecsmedia.pl/c/black-skies-b-iext119110916.jpg"
+  },
+  {
+    "title": "Shadow Killer - audiobook",
+    "author": "Indriðason",
+    "ean": "p1274222378",
+    "image": "https://ecsmedia.pl/c/shadow-killer-b-iext119205666.jpg"
   },
   {
     "title": "Oblivion - audiobook",
@@ -450,6 +498,12 @@
     "image": "https://ecsmedia.pl/c/chlod-kwietniowego-slonca-b-iext196999777.jpg"
   },
   {
+    "title": "Die Sturlungen",
+    "author": "Kárason",
+    "ean": "p1201804549",
+    "image": "https://ecsmedia.pl/c/die-sturlungen-b-iext160801292.jpg"
+  },
+  {
     "title": "Wyspa diabła - ebook mobi",
     "author": "Kárason",
     "ean": "p1235720613",
@@ -460,6 +514,18 @@
     "author": "Kárason",
     "ean": "p1235720640",
     "image": "https://ecsmedia.pl/c/wyspa-diabla-b-iext55493221.jpg"
+  },
+  {
+    "title": "Wyspa diabła - ebook PDF",
+    "author": "Kárason",
+    "ean": "p1235720659",
+    "image": "https://ecsmedia.pl/c/wyspa-diabla-b-iext55489001.jpg"
+  },
+  {
+    "title": "Złota wyspa",
+    "author": "Kárason",
+    "ean": "p1240852536",
+    "image": "https://ecsmedia.pl/c/zlota-wyspa-b-iext197547300.jpg"
   },
   {
     "title": "Ziemia przyobiecana - ebook PDF",
@@ -478,6 +544,18 @@
     "author": "Kárason",
     "ean": "p1256986676",
     "image": "https://ecsmedia.pl/c/ziemia-przyobiecana-b-iext200385504.jpg"
+  },
+  {
+    "title": "Wyspa diabła - audiobook",
+    "author": "Kárason",
+    "ean": "p1291000579",
+    "image": "https://ecsmedia.pl/c/wyspa-diabla-audiobook-b-iext187677553.jpg"
+  },
+  {
+    "title": "Złota wyspa - audiobook",
+    "author": "Kárason",
+    "ean": "p1292324227",
+    "image": "https://ecsmedia.pl/c/zlota-wyspa-audiobook-b-iext187691250.jpg"
   },
   {
     "title": "Ziemia przyobiecana - audiobook",
@@ -522,6 +600,18 @@
     "image": "https://ecsmedia.pl/c/zuchwaliada-b-iext215026957.jpg"
   },
   {
+    "title": "Zuchwaliada - ebook EPUB",
+    "author": "Laxness",
+    "ean": "p1715263683",
+    "image": "https://ecsmedia.pl/c/zuchwaliada-ebook-epub-b-iext219005009.jpg"
+  },
+  {
+    "title": "Zuchwaliada - ebook MOBI",
+    "author": "Laxness",
+    "ean": "p1715268138",
+    "image": "https://ecsmedia.pl/c/zuchwaliada-ebook-mobi-b-iext219005007.jpg"
+  },
+  {
     "title": "Die Geschichte vom blauen Planeten",
     "author": "Magnason",
     "ean": "2344103",
@@ -556,6 +646,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1050176273",
     "image": "https://ecsmedia.pl/c/pamietam-cie-b-iext167035902.jpg"
+  },
+  {
+    "title": "Statek śmierci. Thora. Tom 6",
+    "author": "Sigurðardóttir",
+    "ean": "p1075525445",
+    "image": "https://ecsmedia.pl/c/statek-smierci-thora-tom-6-b-iext167042398.jpg"
   },
   {
     "title": "Das letzte Ritual",
@@ -670,6 +766,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1243614292",
     "image": "https://ecsmedia.pl/c/rozgrzeszenie-ebook-mobi-b-iext232534994.jpg"
+  },
+  {
+    "title": "Porachunki - audiobook",
+    "author": "Sigurðardóttir",
+    "ean": "p1247022985",
+    "image": "https://ecsmedia.pl/c/porachunki-audiobook-b-iext195713368.jpg"
   },
   {
     "title": "Wzgórze Wisielców. Freyja i Huldar. Tom 4",
@@ -798,10 +900,22 @@
     "image": "https://ecsmedia.pl/c/diabelska-lalka-b-iext218959812.jpg"
   },
   {
+    "title": "Złe decyzje",
+    "author": "Sigurðardóttir",
+    "ean": "p1720589983",
+    "image": "https://ecsmedia.pl/c/zle-decyzje-b-iext218291732.jpg"
+  },
+  {
     "title": "Złe decyzje - audiobook",
     "author": "Sigurðardóttir",
     "ean": "p1757236139",
     "image": "https://ecsmedia.pl/c/zle-decyzje-audiobook-b-iext231326011.jpg"
+  },
+  {
+    "title": "Weź moją duszę. Thora. Tom 2",
+    "author": "Sigurðardóttir",
+    "ean": "prod570113",
+    "image": "https://ecsmedia.pl/c/wez-moja-dusze-thora-tom-2-b-iext108298933.jpg"
   },
   {
     "title": "Thora. Tom 4. Lód w żyłach",
@@ -976,5 +1090,17 @@
     "author": "Ólafsson",
     "ean": "p1554615261",
     "image": "https://ecsmedia.pl/c/continuum-johann-sebastian-bach-b-iext168791635.jpg"
+  },
+  {
+    "title": "Welfare and the Great Recession [DRM] - ebook PDF",
+    "author": "Ólafsson",
+    "ean": "p1588155047",
+    "image": "https://ecsmedia.pl/c/welfare-and-the-great-recession-drm-b-iext177906597.jpg"
+  },
+  {
+    "title": "Touch - audiobook",
+    "author": "Ólafsson",
+    "ean": "p1713953649",
+    "image": "https://ecsmedia.pl/c/touch-audiobook-b-iext219083860.jpg"
   }
 ]
