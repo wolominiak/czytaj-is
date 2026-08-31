@@ -150,12 +150,6 @@
     "image": "https://ecsmedia.pl/c/101-reykjavik-b-iext175261936.jpg"
   },
   {
-    "title": "Seekrank in München",
-    "author": "Helgason",
-    "ean": "p1108566298",
-    "image": "https://ecsmedia.pl/c/seekrank-in-muenchen-b-iext142440962.jpg"
-  },
-  {
     "title": "101 Reykjavik",
     "author": "Helgason",
     "ean": "p1480093559",
@@ -514,6 +508,12 @@
     "author": "Kárason",
     "ean": "p1235720659",
     "image": "https://ecsmedia.pl/c/wyspa-diabla-b-iext55489001.jpg"
+  },
+  {
+    "title": "Wyspa diabła",
+    "author": "Kárason",
+    "ean": "p1236746256",
+    "image": "https://ecsmedia.pl/c/wyspa-diabla-b-iext196863668.jpg"
   },
   {
     "title": "Złota wyspa",
