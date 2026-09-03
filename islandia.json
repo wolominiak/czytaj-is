@@ -636,12 +636,6 @@
     "image": "https://ecsmedia.pl/c/thora-tom-2-wez-moja-dusze-b-iext159020406.jpg"
   },
   {
-    "title": "Pamiętam cię",
-    "author": "Sigurðardóttir",
-    "ean": "p1050176273",
-    "image": "https://ecsmedia.pl/c/pamietam-cie-b-iext167035902.jpg"
-  },
-  {
     "title": "Statek śmierci. Thora. Tom 6",
     "author": "Sigurðardóttir",
     "ean": "p1075525445",
@@ -652,6 +646,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1123867792",
     "image": "https://ecsmedia.pl/c/das-letzte-ritual-b-iext119760434.jpg"
+  },
+  {
+    "title": "Das gefrorene Licht",
+    "author": "Sigurðardóttir",
+    "ean": "p1123867808",
+    "image": "https://ecsmedia.pl/c/das-gefrorene-licht-b-iext119758429.jpg"
   },
   {
     "title": "Dna",
@@ -1060,6 +1060,12 @@
     "author": "Ólafsson",
     "ean": "p1412133070",
     "image": "https://ecsmedia.pl/c/goldberg-variations-plyta-winylowa-b-iext166636627.jpg"
+  },
+  {
+    "title": "Goldberg Variations",
+    "author": "Ólafsson",
+    "ean": "p1412133353",
+    "image": "https://ecsmedia.pl/c/goldberg-variations-b-iext196267052.jpg"
   },
   {
     "title": "Goldberg Variations (przeźroczysty winyl), płyta winylowa",
