@@ -105,7 +105,7 @@
     "title": "Dzieła",
     "author": "Bragi",
     "ean": "prod3790035",
-    "image": "https://ecsmedia.pl/c/dziela-b-iext97398946.jpg"
+    "image": "https://ecsmedia.pl/cir/b/dziela-ZDJECIE_OKLADKI_PRZOD_DUZY/4656/14700544784724656.webp"
   },
   {
     "title": "Weinberg: Orchestral Works. Volume 4",
@@ -144,16 +144,10 @@
     "image": "https://ecsmedia.pl/cir/b/advent-im-hochgebirge-ZDJECIE_OKLADKI_PRZOD_DUZY/2515/14709572349602515.webp"
   },
   {
-    "title": "101 Reykjavik - ebook epub",
+    "title": "101 Reykjavik",
     "author": "Helgason",
-    "ean": "p1510168459",
-    "image": "https://ecsmedia.pl/c/101-reykjavik-ebook-epub-b-iext209321379.jpg"
-  },
-  {
-    "title": "101 Reykjavik - ebook mobi",
-    "author": "Helgason",
-    "ean": "p1511550259",
-    "image": "https://ecsmedia.pl/c/101-reykjavik-ebook-mobi-b-iext209321301.jpg"
+    "ean": "p1480093559",
+    "image": "https://ecsmedia.pl/cir/b/101-reykjavik-2621036909703416352/1164e4d7005c418c89befed0519fa85c.webp"
   },
   {
     "title": "Echoes of Valhalla [DRM] - ebook EPUB",
@@ -222,6 +216,12 @@
     "image": "https://ecsmedia.pl/c/hipotermia-komisarz-erlendur-sveinsson-tom-8-ebook-mobi-b-iext207805119.jpg"
   },
   {
+    "title": "Schattenwege",
+    "author": "Indriðason",
+    "ean": "p1132884250",
+    "image": "https://ecsmedia.pl/cir/b/schattenwege-ZDJECIE_OKLADKI_PRZOD_DUZY/3025/14788423648233025.webp"
+  },
+  {
     "title": "Ciemna rzeka. Komisarz Erlendur Sveinsson. Tom 9 - ebook mobi",
     "author": "Indriðason",
     "ean": "p1143363957",
@@ -250,6 +250,12 @@
     "author": "Indriðason",
     "ean": "p1197232270",
     "image": "https://ecsmedia.pl/cir/b/czarne-powietrza-komisarz-erlendur-sveinsson-tom-10-ebook-mobi-1838630013266510287/e0f2eeefcae045049893d1c7bfd8a7fc.webp"
+  },
+  {
+    "title": "Der Reisende",
+    "author": "Indriðason",
+    "ean": "p1219261369",
+    "image": "https://ecsmedia.pl/cir/b/der-reisende-ZDJECIE_OKLADKI_PRZOD_DUZY/0843/15418130629220843.webp"
   },
   {
     "title": "Reykjavik Nights - audiobook",
@@ -528,18 +534,6 @@
     "image": "https://ecsmedia.pl/cir/b/ziemia-przyobiecana-audiobook-4175106451866011942/07c6062978d544aaa5d95f85ce29cd0a.webp"
   },
   {
-    "title": "Dzwon Islandii - ebook EPUB",
-    "author": "Laxness",
-    "ean": "p1606130289",
-    "image": "https://ecsmedia.pl/cir/b/dzwon-islandii-ebook-epub-7434657305213225894/59fa2f68ed4540899bd0e144c08e7843.webp"
-  },
-  {
-    "title": "Dzwon Islandii - ebook MOBI",
-    "author": "Laxness",
-    "ean": "p1606288489",
-    "image": "https://ecsmedia.pl/c/dzwon-islandii-ebook-mobi-b-iext183698458.jpg"
-  },
-  {
     "title": "Dzwon Islandii",
     "author": "Laxness",
     "ean": "p1609631743",
@@ -666,12 +660,6 @@
     "image": "https://ecsmedia.pl/cir/b/klatka-reykjavik-noir-tom-3-ZDJECIE_OKLADKI_PRZOD_DUZY/6418/15596320767446418.webp"
   },
   {
-    "title": "Rozgrzeszenie. Freyja i Huldar. Tom 3",
-    "author": "Sigurðardóttir",
-    "ean": "p1240143483",
-    "image": "https://ecsmedia.pl/cir/b/rozgrzeszenie-freyja-i-huldar-tom-3-ZDJECIE_OKLADKI_PRZOD_DUZY/5444/15834124340055444.webp"
-  },
-  {
     "title": "Rozgrzeszenie - ebook epub",
     "author": "Sigurðardóttir",
     "ean": "p1243614283",
@@ -724,6 +712,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1273710511",
     "image": "https://ecsmedia.pl/cir/b/undesired-audiobook-ZDJECIE_OKLADKI_PRZOD_DUZY/6795/16238912237206795.webp"
+  },
+  {
+    "title": "Diabelska lalka. Freyja i Huldar. Tom 5",
+    "author": "Sigurðardóttir",
+    "ean": "p1307623174",
+    "image": "https://ecsmedia.pl/cir/b/diabelska-lalka-freyja-i-huldar-tom-5-0/1c539328e29b4cb485b6308850cc005e.webp"
   },
   {
     "title": "Diabelska lalka - ebook epub",
@@ -852,6 +846,12 @@
     "image": "https://ecsmedia.pl/c/scandinavia-in-the-age-of-vikings-drm-ebook-epub-b-iext228475241.jpg"
   },
   {
+    "title": "Sommerlicht, und dann kommt die Nacht",
+    "author": "Stefánsson",
+    "ean": "p1063417815",
+    "image": "https://ecsmedia.pl/c/sommerlicht-und-dann-kommt-die-nacht-b-iext142149890.jpg"
+  },
+  {
     "title": "Smutek aniołów",
     "author": "Stefánsson",
     "ean": "p1103919538",
@@ -861,7 +861,7 @@
     "title": "Etwas von der Größe des Universums",
     "author": "Stefánsson",
     "ean": "p1132910449",
-    "image": "https://ecsmedia.pl/c/etwas-von-der-groesse-des-universums-b-iext142536710.jpg"
+    "image": "https://ecsmedia.pl/cir/b/etwas-von-der-grosse-des-universums-ZDJECIE_OKLADKI_PRZOD_DUZY/5687/14788506234625687.webp"
   },
   {
     "title": "Fische haben keine Beine",
@@ -880,6 +880,12 @@
     "author": "Ólafsson",
     "ean": "p1134698550",
     "image": "https://ecsmedia.pl/cir/b/olafsson-glass-piano-works-ZDJECIE_OKLADKI_PRZOD_DUZY/2387/16189005560752387.webp"
+  },
+  {
+    "title": "Denen Zum Trost, Die Sich In Ihrer Gegenwart Nicht Finden Können",
+    "author": "Ólafsson",
+    "ean": "p1159627421",
+    "image": "https://ecsmedia.pl/c/denen-zum-trost-die-sich-in-ihrer-gegenwart-nicht-finden-koennen-b-iext160801053.jpg"
   },
   {
     "title": "Darkest Hour (Original Motion Picture Soundtrack)",
