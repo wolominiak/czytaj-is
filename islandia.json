@@ -138,6 +138,12 @@
     "image": "https://ecsmedia.pl/cir/b/adwent-2026/08/24/5281281514155819803/9f4711053d4a4093a9b093ffa4fe836c.webp"
   },
   {
+    "title": "Adwent - audiobook",
+    "author": "Gunnarsson",
+    "ean": "p1810073356",
+    "image": "https://ecsmedia.pl/cir/b/adwent-audiobook-2026/10/16/8539518403698575539/fd77f0f7681b42968e07f498214b0c42.webp"
+  },
+  {
     "title": "Weinberg Concertos",
     "author": "Gunnarsson",
     "ean": "prod1210845",
@@ -150,10 +156,16 @@
     "image": "https://ecsmedia.pl/cir/b/advent-im-hochgebirge-ZDJECIE_OKLADKI_PRZOD_DUZY/2515/14709572349602515.webp"
   },
   {
-    "title": "101 Reykjavik",
+    "title": "101 Reykjavik - ebook epub",
     "author": "Helgason",
-    "ean": "p1480093559",
-    "image": "https://ecsmedia.pl/cir/b/101-reykjavik-2621036909703416352/1164e4d7005c418c89befed0519fa85c.webp"
+    "ean": "p1510168459",
+    "image": "https://ecsmedia.pl/c/101-reykjavik-ebook-epub-b-iext209321379.jpg"
+  },
+  {
+    "title": "101 Reykjavik - ebook mobi",
+    "author": "Helgason",
+    "ean": "p1511550259",
+    "image": "https://ecsmedia.pl/c/101-reykjavik-ebook-mobi-b-iext209321301.jpg"
   },
   {
     "title": "Echoes of Valhalla [DRM] - ebook EPUB",
@@ -528,6 +540,18 @@
     "image": "https://ecsmedia.pl/cir/b/ziemia-przyobiecana-audiobook-4175106451866011942/07c6062978d544aaa5d95f85ce29cd0a.webp"
   },
   {
+    "title": "Dzwon Islandii - ebook EPUB",
+    "author": "Laxness",
+    "ean": "p1606130289",
+    "image": "https://ecsmedia.pl/cir/b/dzwon-islandii-ebook-epub-7434657305213225894/59fa2f68ed4540899bd0e144c08e7843.webp"
+  },
+  {
+    "title": "Dzwon Islandii - ebook MOBI",
+    "author": "Laxness",
+    "ean": "p1606288489",
+    "image": "https://ecsmedia.pl/cir/b/dzwon-islandii-ebook-mobi-5221950623474665867/9c270d321d114a0abd9721c641758575.webp"
+  },
+  {
     "title": "Dzwon Islandii",
     "author": "Laxness",
     "ean": "p1609631743",
@@ -558,12 +582,6 @@
     "image": "https://ecsmedia.pl/cir/b/zuchwaliada-ebook-mobi-2026/02/24/484680779444735518/ef867139027f4220bcbbc23f43beade6.webp"
   },
   {
-    "title": "Independent People",
-    "author": "Laxness",
-    "ean": "prod4792755",
-    "image": "https://ecsmedia.pl/cir/b/independent-people-ZDJECIE_OKLADKI_PRZOD_DUZY/1931/14701589188701931.webp"
-  },
-  {
     "title": "Die Geschichte vom blauen Planeten",
     "author": "Magnason",
     "ean": "2344103",
@@ -574,6 +592,18 @@
     "author": "Magnason",
     "ean": "p1097759433",
     "image": "https://ecsmedia.pl/cir/b/historia-blekitnej-planety-ZDJECIE_OKLADKI_PRZOD_DUZY/4334/14635593874294334.webp"
+  },
+  {
+    "title": "O czasie i wodzie - ebook epub",
+    "author": "Magnason",
+    "ean": "p1246271131",
+    "image": "https://ecsmedia.pl/cir/b/o-czasie-i-wodzie-ebook-epub-1571958/43c8ff81736649b192dfd807f13bf666.webp"
+  },
+  {
+    "title": "O czasie i wodzie - ebook mobi",
+    "author": "Magnason",
+    "ean": "p1246271317",
+    "image": "https://ecsmedia.pl/c/o-czasie-i-wodzie-ebook-mobi-b-iext209498372.jpg"
   },
   {
     "title": "Thora. Tom 2. Weź moją duszę",
@@ -592,6 +622,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1123867792",
     "image": "https://ecsmedia.pl/cir/b/das-letzte-ritual-ZDJECIE_OKLADKI_PRZOD_DUZY/6684/14704523494056684.webp"
+  },
+  {
+    "title": "Dna",
+    "author": "Sigurðardóttir",
+    "ean": "p1142677215",
+    "image": "https://ecsmedia.pl/cir/b/dna-ZDJECIE_OKLADKI_PRZOD_DUZY/9325/14928221302189325.webp"
   },
   {
     "title": "The Legacy",
@@ -714,12 +750,6 @@
     "image": "https://ecsmedia.pl/cir/b/undesired-audiobook-ZDJECIE_OKLADKI_PRZOD_DUZY/6795/16238912237206795.webp"
   },
   {
-    "title": "Diabelska lalka. Freyja i Huldar. Tom 5",
-    "author": "Sigurðardóttir",
-    "ean": "p1307623174",
-    "image": "https://ecsmedia.pl/cir/b/diabelska-lalka-freyja-i-huldar-tom-5-0/1c539328e29b4cb485b6308850cc005e.webp"
-  },
-  {
     "title": "Diabelska lalka - ebook epub",
     "author": "Sigurðardóttir",
     "ean": "p1310312029",
@@ -826,6 +856,12 @@
     "author": "Sigurðardóttir",
     "ean": "prod61040057",
     "image": "https://ecsmedia.pl/cir/b/spojrz-na-mnie-thora-tom-5-ZDJECIE_OKLADKI_PRZOD_DUZY/8477/14700467869318477.webp"
+  },
+  {
+    "title": "Thora. Tom 3. W proch się obrócisz",
+    "author": "Sigurðardóttir",
+    "ean": "prod9150169",
+    "image": "https://ecsmedia.pl/cir/b/thora-tom-3-w-proch-sie-obrocisz-ZDJECIE_OKLADKI_PRZOD_DUZY/2105/14568525264932105.webp"
   },
   {
     "title": "Dissonance, płyta winylowa",
