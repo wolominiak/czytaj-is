@@ -156,16 +156,10 @@
     "image": "https://ecsmedia.pl/cir/b/advent-im-hochgebirge-ZDJECIE_OKLADKI_PRZOD_DUZY/2515/14709572349602515.webp"
   },
   {
-    "title": "101 Reykjavik - ebook epub",
+    "title": "101 Reykjavik",
     "author": "Helgason",
-    "ean": "p1510168459",
-    "image": "https://ecsmedia.pl/c/101-reykjavik-ebook-epub-b-iext209321379.jpg"
-  },
-  {
-    "title": "101 Reykjavik - ebook mobi",
-    "author": "Helgason",
-    "ean": "p1511550259",
-    "image": "https://ecsmedia.pl/c/101-reykjavik-ebook-mobi-b-iext209321301.jpg"
+    "ean": "p1480093559",
+    "image": "https://ecsmedia.pl/cir/b/101-reykjavik-2621036909703416352/1164e4d7005c418c89befed0519fa85c.webp"
   },
   {
     "title": "Echoes of Valhalla [DRM] - ebook EPUB",
@@ -594,18 +588,6 @@
     "image": "https://ecsmedia.pl/cir/b/historia-blekitnej-planety-ZDJECIE_OKLADKI_PRZOD_DUZY/4334/14635593874294334.webp"
   },
   {
-    "title": "O czasie i wodzie - ebook epub",
-    "author": "Magnason",
-    "ean": "p1246271131",
-    "image": "https://ecsmedia.pl/cir/b/o-czasie-i-wodzie-ebook-epub-1571958/43c8ff81736649b192dfd807f13bf666.webp"
-  },
-  {
-    "title": "O czasie i wodzie - ebook mobi",
-    "author": "Magnason",
-    "ean": "p1246271317",
-    "image": "https://ecsmedia.pl/c/o-czasie-i-wodzie-ebook-mobi-b-iext209498372.jpg"
-  },
-  {
     "title": "Thora. Tom 2. Weź moją duszę",
     "author": "Sigurðardóttir",
     "ean": "p1044929443",
@@ -624,16 +606,16 @@
     "image": "https://ecsmedia.pl/cir/b/das-letzte-ritual-ZDJECIE_OKLADKI_PRZOD_DUZY/6684/14704523494056684.webp"
   },
   {
-    "title": "Dna",
-    "author": "Sigurðardóttir",
-    "ean": "p1142677215",
-    "image": "https://ecsmedia.pl/cir/b/dna-ZDJECIE_OKLADKI_PRZOD_DUZY/9325/14928221302189325.webp"
-  },
-  {
     "title": "The Legacy",
     "author": "Sigurðardóttir",
     "ean": "p1165719565",
     "image": "https://ecsmedia.pl/cir/b/the-legacy-ZDJECIE_OKLADKI_PRZOD_DUZY/6992/15188057686176992.webp"
+  },
+  {
+    "title": "Sog",
+    "author": "Sigurðardóttir",
+    "ean": "p1201804035",
+    "image": "https://ecsmedia.pl/cir/b/sog-ZDJECIE_OKLADKI_PRZOD_DUZY/6852/15276935299046852.webp"
   },
   {
     "title": "Pułapka",
@@ -694,6 +676,12 @@
     "author": "Sigurðardóttir",
     "ean": "p1228815630",
     "image": "https://ecsmedia.pl/cir/b/klatka-reykjavik-noir-tom-3-ZDJECIE_OKLADKI_PRZOD_DUZY/6418/15596320767446418.webp"
+  },
+  {
+    "title": "Rozgrzeszenie. Freyja i Huldar. Tom 3",
+    "author": "Sigurðardóttir",
+    "ean": "p1240143483",
+    "image": "https://ecsmedia.pl/cir/b/rozgrzeszenie-freyja-i-huldar-tom-3-ZDJECIE_OKLADKI_PRZOD_DUZY/5444/15834124340055444.webp"
   },
   {
     "title": "Rozgrzeszenie - ebook epub",
@@ -970,12 +958,6 @@
     "author": "Ólafsson",
     "ean": "p1412133070",
     "image": "https://ecsmedia.pl/cir/b/goldberg-variations-plyta-winylowa-9079698812098596566/f4fc53c8bc694e1d836eab6445157e29.webp"
-  },
-  {
-    "title": "Goldberg Variations",
-    "author": "Ólafsson",
-    "ean": "p1412133353",
-    "image": "https://ecsmedia.pl/cir/b/goldberg-variations-1729764047664988317/ed2914b6330b4776b0f485a56d735652.webp"
   },
   {
     "title": "Goldberg Variations (przeźroczysty winyl), płyta winylowa",
