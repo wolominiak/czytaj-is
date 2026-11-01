@@ -6,12 +6,6 @@
     "image": "https://ecsmedia.pl/cir/b/blackout-island-ZDJECIE_OKLADKI_PRZOD_DUZY/1534/15339376144441534.webp"
   },
   {
-    "title": "Wyspa",
-    "author": "Björnsdóttir",
-    "ean": "p1179986438",
-    "image": "https://ecsmedia.pl/cir/b/wyspa-ZDJECIE_OKLADKI_PRZOD_DUZY/2099/15160306924172099.webp"
-  },
-  {
     "title": "Święte słowo",
     "author": "Björnsdóttir",
     "ean": "p1236362799",
@@ -138,12 +132,6 @@
     "image": "https://ecsmedia.pl/cir/b/adwent-2026/08/24/5281281514155819803/9f4711053d4a4093a9b093ffa4fe836c.webp"
   },
   {
-    "title": "Adwent - audiobook",
-    "author": "Gunnarsson",
-    "ean": "p1810073356",
-    "image": "https://ecsmedia.pl/cir/b/adwent-audiobook-2026/10/16/8539518403698575539/fd77f0f7681b42968e07f498214b0c42.webp"
-  },
-  {
     "title": "Weinberg Concertos",
     "author": "Gunnarsson",
     "ean": "prod1210845",
@@ -234,6 +222,12 @@
     "image": "https://ecsmedia.pl/c/hipotermia-komisarz-erlendur-sveinsson-tom-8-ebook-mobi-b-iext207805119.jpg"
   },
   {
+    "title": "Schattenwege",
+    "author": "Indriðason",
+    "ean": "p1132884250",
+    "image": "https://ecsmedia.pl/cir/b/schattenwege-ZDJECIE_OKLADKI_PRZOD_DUZY/3025/14788423648233025.webp"
+  },
+  {
     "title": "Ciemna rzeka. Komisarz Erlendur Sveinsson. Tom 9 - ebook mobi",
     "author": "Indriðason",
     "ean": "p1143363957",
@@ -268,6 +262,12 @@
     "author": "Indriðason",
     "ean": "p1197232270",
     "image": "https://ecsmedia.pl/cir/b/czarne-powietrza-komisarz-erlendur-sveinsson-tom-10-ebook-mobi-1838630013266510287/e0f2eeefcae045049893d1c7bfd8a7fc.webp"
+  },
+  {
+    "title": "Der Reisende",
+    "author": "Indriðason",
+    "ean": "p1219261369",
+    "image": "https://ecsmedia.pl/cir/b/der-reisende-ZDJECIE_OKLADKI_PRZOD_DUZY/0843/15418130629220843.webp"
   },
   {
     "title": "Reykjavik Nights - audiobook",
@@ -768,6 +768,12 @@
     "image": "https://ecsmedia.pl/cir/b/undesired-audiobook-ZDJECIE_OKLADKI_PRZOD_DUZY/6795/16238912237206795.webp"
   },
   {
+    "title": "Diabelska lalka. Freyja i Huldar. Tom 5",
+    "author": "Sigurðardóttir",
+    "ean": "p1307623174",
+    "image": "https://ecsmedia.pl/cir/b/diabelska-lalka-freyja-i-huldar-tom-5-0/1c539328e29b4cb485b6308850cc005e.webp"
+  },
+  {
     "title": "Diabelska lalka - ebook epub",
     "author": "Sigurðardóttir",
     "ean": "p1310312029",
@@ -900,6 +906,12 @@
     "image": "https://ecsmedia.pl/c/scandinavia-in-the-age-of-vikings-drm-ebook-epub-b-iext228475241.jpg"
   },
   {
+    "title": "Sommerlicht, und dann kommt die Nacht",
+    "author": "Stefánsson",
+    "ean": "p1063417815",
+    "image": "https://ecsmedia.pl/c/sommerlicht-und-dann-kommt-die-nacht-b-iext142149890.jpg"
+  },
+  {
     "title": "Smutek aniołów",
     "author": "Stefánsson",
     "ean": "p1103919538",
@@ -994,12 +1006,6 @@
     "author": "Ólafsson",
     "ean": "p1412844510",
     "image": "https://ecsmedia.pl/cir/b/goldberg-variations-przezroczysty-winyl-plyta-winylowa-6846758433924729005/c3ed074c8acc4e74b3168e265226ca56.webp"
-  },
-  {
-    "title": "Olafsson,Vikingur: Vikingur Olafsson - Debussy/Rameau, płyta winylowa",
-    "author": "Ólafsson",
-    "ean": "p1433319523",
-    "image": "https://ecsmedia.pl/cir/b/olafsson-vikingur-vikingur-olafsson-debussy-rameau-plyta-winylowa-1685668347485374407/ed12fcd77b4444e282d9fd443443a89b.webp"
   },
   {
     "title": "Welfare and the Great Recession [DRM] - ebook PDF",
