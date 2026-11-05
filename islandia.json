@@ -54,22 +54,10 @@
     "image": "https://ecsmedia.pl/c/beethoven-string-quartets-op-74-op-130-b-iext138661840.jpg"
   },
   {
-    "title": "Smells Like Spells Norse Magic Bragi pałeczki zapachowe (inspiration/creativity) 50 g",
-    "author": "Bragi",
-    "ean": "p1613768150",
-    "image": "https://ecsmedia.pl/cir/b/smells-like-spells-norse-magic-bragi-paleczki-zapachowe-inspiration-creativity-50-g-3287239663850637415/dcf1299a52314fb29b739ecbd7368b16.webp"
-  },
-  {
     "title": "Bach: Violin Concertos, płyta winylowa",
     "author": "Bragi",
     "ean": "p1657296879",
     "image": "https://ecsmedia.pl/cir/b/bach-violin-concertos-plyta-winylowa-8529433556917634374/7ebf8ca63ec44861909e2065e621e384.webp"
-  },
-  {
-    "title": "Nie przegram, mając plan ucieczki",
-    "author": "Bragi",
-    "ean": "p1676074490",
-    "image": "https://ecsmedia.pl/cir/b/nie-przegram-majac-plan-ucieczki-2926017567793169017/a8e410f999234a4399ff48a2364fb447.webp"
   },
   {
     "title": "Shostakovich: Violin Concertos 1 & 2, płyta winylowa",
@@ -148,6 +136,12 @@
     "author": "Helgason",
     "ean": "p1080445499",
     "image": "https://ecsmedia.pl/cir/b/kobieta-w-1000-c-ZDJECIE_OKLADKI_PRZOD_DUZY/2199/14649053113972199.webp"
+  },
+  {
+    "title": "101 Reykjavik",
+    "author": "Helgason",
+    "ean": "p1480093559",
+    "image": "https://ecsmedia.pl/cir/b/101-reykjavik-2621036909703416352/1164e4d7005c418c89befed0519fa85c.webp"
   },
   {
     "title": "101 Reykjavik - ebook epub",
@@ -406,18 +400,6 @@
     "author": "Indriðason",
     "ean": "p1433489150",
     "image": "https://ecsmedia.pl/cir/b/reykjavickie-noce-8955595153224778513/a5daceb0c3f74eb884fabdec0e25d2c6.webp"
-  },
-  {
-    "title": "Reykjavickie noce. Komisarz Erlendur Sveinsson. Tom 2 - audiobook",
-    "author": "Indriðason",
-    "ean": "p1439779435",
-    "image": "https://ecsmedia.pl/cir/b/reykjavickie-noce-komisarz-erlendur-sveinsson-tom-2-audiobook-4612283440252472413/8a2db4c8777f4664a4a6b340d1d8330e.webp"
-  },
-  {
-    "title": "Pojedynek. Komisarz Erlendur Sveinsson. Tom 1 - audiobook",
-    "author": "Indriðason",
-    "ean": "p1439811388",
-    "image": "https://ecsmedia.pl/cir/b/pojedynek-komisarz-erlendur-sveinsson-tom-1-audiobook-9181131474554602254/aee3902310e74d5791fea24a46f2c031.webp"
   },
   {
     "title": "Reykjavickie noce. Komisarz Erlendur Sveinsson. Tom 2 - ebook epub",
@@ -696,6 +678,12 @@
     "image": "https://ecsmedia.pl/cir/b/das-gluhende-grab-ZDJECIE_OKLADKI_PRZOD_DUZY/6000/15415286108396000.webp"
   },
   {
+    "title": "Die eisblaue Spur",
+    "author": "Sigurðardóttir",
+    "ean": "p1218608402",
+    "image": "https://ecsmedia.pl/cir/b/die-eisblaue-spur-ZDJECIE_OKLADKI_PRZOD_DUZY/6002/15415286111296002.webp"
+  },
+  {
     "title": "Odziedziczone zło - ebook epub",
     "author": "Sigurðardóttir",
     "ean": "p1219373141",
@@ -736,12 +724,6 @@
     "author": "Sigurðardóttir",
     "ean": "p1228815630",
     "image": "https://ecsmedia.pl/cir/b/klatka-reykjavik-noir-tom-3-ZDJECIE_OKLADKI_PRZOD_DUZY/6418/15596320767446418.webp"
-  },
-  {
-    "title": "Rozgrzeszenie. Freyja i Huldar. Tom 3",
-    "author": "Sigurðardóttir",
-    "ean": "p1240143483",
-    "image": "https://ecsmedia.pl/cir/b/rozgrzeszenie-freyja-i-huldar-tom-3-ZDJECIE_OKLADKI_PRZOD_DUZY/5444/15834124340055444.webp"
   },
   {
     "title": "Rozgrzeszenie - ebook epub",
@@ -924,12 +906,6 @@
     "image": "https://ecsmedia.pl/c/scandinavia-in-the-age-of-vikings-drm-ebook-epub-b-iext228475241.jpg"
   },
   {
-    "title": "Sommerlicht, und dann kommt die Nacht",
-    "author": "Stefánsson",
-    "ean": "p1063417815",
-    "image": "https://ecsmedia.pl/c/sommerlicht-und-dann-kommt-die-nacht-b-iext142149890.jpg"
-  },
-  {
     "title": "Smutek aniołów",
     "author": "Stefánsson",
     "ean": "p1103919538",
@@ -1030,6 +1006,12 @@
     "author": "Ólafsson",
     "ean": "p1412133070",
     "image": "https://ecsmedia.pl/cir/b/goldberg-variations-plyta-winylowa-9079698812098596566/f4fc53c8bc694e1d836eab6445157e29.webp"
+  },
+  {
+    "title": "Goldberg Variations",
+    "author": "Ólafsson",
+    "ean": "p1412133353",
+    "image": "https://ecsmedia.pl/cir/b/goldberg-variations-1729764047664988317/ed2914b6330b4776b0f485a56d735652.webp"
   },
   {
     "title": "Goldberg Variations (przeźroczysty winyl), płyta winylowa",
